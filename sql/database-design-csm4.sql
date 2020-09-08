@@ -70,7 +70,6 @@ create table if not exists role
 create table if not exists user
 (
     id            int auto_increment primary key,
-    role_id       int                                not null,
     first_name    varchar(255)                       not null,
     last_name     varchar(255)                       not null,
     gender        bit                                not null,
@@ -82,16 +81,22 @@ create table if not exists user
     password      varchar(50)                        not null,
     status        int                                not null,
     created_date  datetime default CURRENT_TIMESTAMP null,
-    update_date   datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP,
-
-    constraint user_role_fk foreign key (role_id) references role (id)
+    update_date   datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP
 ) charset = utf8mb4;
 
 alter table user
-    alter column role_id set default 1;
-
-alter table user
     alter column status set default 1;
+
+create table if not exists user_role
+(
+    user_id int not null,
+    role_id int not null,
+    constraint ur_user_fk foreign key (user_id) references user (id),
+    CONSTRAINT ur_role_fk foreign key (role_id) references role (id)
+) charset = utf8mb4;
+
+alter table user_role
+    alter column role_id set default 3;
 
 create table if not exists bill
 (
@@ -120,3 +125,10 @@ create table if not exists bill_details
     constraint bill_details_cart_shopping_fk foreign key (bill_id) references bill (id),
     constraint bill_details_product_detail_fk foreign key (room_status_id) references room_status (id)
 ) charset = utf8mb4;
+
+INSERT INTO hotel_booking.role (role_name)
+VALUES ('ADMIN');
+INSERT INTO hotel_booking.role (role_name)
+VALUES ('MANAGER');
+INSERT INTO hotel_booking.role (role_name)
+VALUES ('USER');
