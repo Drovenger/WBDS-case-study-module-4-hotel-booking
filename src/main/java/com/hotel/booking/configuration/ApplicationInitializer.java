@@ -1,4 +1,4 @@
-package com.codegym.hotel.booking.configuration;
+package com.hotel.booking.configuration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import javax.servlet.Filter;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    private static Logger logger = LoggerFactory.getLogger(com.codegym.hotel.booking.configuration.ApplicationInitializer.class);
+    private static Logger logger = LoggerFactory.getLogger(ApplicationInitializer.class);
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
