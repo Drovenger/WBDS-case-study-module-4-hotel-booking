@@ -1,30 +1,16 @@
 package com.hotel.booking.configuration;
 
-
-import com.hotel.booking.repository.MessageRepository;
-import com.hotel.booking.repository.RoleRepository;
-import com.hotel.booking.repository.UserRepository;
-import com.hotel.booking.repository.impl.MessageRepositoryImpl;
-import com.hotel.booking.repository.impl.RoleRepositoryImpl;
-import com.hotel.booking.repository.impl.UserRepositoryImpl;
-import com.hotel.booking.service.MessageService;
-import com.hotel.booking.service.RoleService;
-import com.hotel.booking.service.UserService;
-import com.hotel.booking.service.impl.MessageServiceImpl;
-import com.hotel.booking.service.impl.RoleServiceImpl;
-import com.hotel.booking.service.impl.UserServiceImpl;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -34,7 +20,9 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
@@ -46,14 +34,19 @@ import org.thymeleaf.templatemode.TemplateMode;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
 @EnableSpringDataWebSupport
-@ComponentScan("com.codegym")
-@EnableJpaRepositories("com.codegym.hotel.booking.repository")
+@ComponentScan("com.hotel.booking")
+@EnableJpaRepositories("com.hotel.booking.repository")
+@PropertySources({
+        @PropertySource(value = "classpath:uploadfile.properties"),
+        @PropertySource(value = "classpath:application.properties")
+})
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -65,39 +58,9 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public UserRepository userRepository() {
-        return new UserRepositoryImpl();
-    }
-
-    @Bean
-    public UserService userService() {
-        return new UserServiceImpl();
-    }
-
-    @Bean
-    public RoleRepository roleRepository() {
-        return new RoleRepositoryImpl();
-    }
-
-    @Bean
-    public RoleService roleService() {
-        return new RoleServiceImpl();
-    }
-
-    @Bean
-    public MessageRepository messageRepository() {
-        return new MessageRepositoryImpl();
-    }
-
-    @Bean
-    public MessageService messageService() {
-        return new MessageServiceImpl();
-    }
-
     //Thymeleaf Configuration
     @Bean
-    public SpringResourceTemplateResolver templateResolver() {
+    public SpringResourceTemplateResolver templateResolver(){
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
@@ -108,14 +71,14 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public TemplateEngine templateEngine() {
+    public TemplateEngine templateEngine(){
         TemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
 
     @Bean
-    public ThymeleafViewResolver viewResolver() {
+    public ThymeleafViewResolver viewResolver(){
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
@@ -133,7 +96,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[]{"com.codegym.hotel.booking.model"});
+        em.setPackagesToScan(new String[]{"com.hotel.booking..model"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -142,41 +105,57 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         return em;
     }
 
+    @Autowired
+    Environment evn;
+
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/cms?verifyServerCertificate=false&useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("Mc11041992$");
+        dataSource.setDriverClassName(evn.getProperty("jdbc.driverClassName"));
+        dataSource.setUrl(evn.getProperty("jdbc.url"));
+        dataSource.setUsername(evn.getProperty("jdbc.username"));
+        dataSource.setPassword(evn.getProperty("jdbc.password"));
         return dataSource;
     }
 
+    Properties additionalProperties() {
+
+        return new Properties(){
+            {
+                setProperty("hibernate.dialect", evn.getProperty("hibernate.dialect"));
+                setProperty("hibernate.format_sql", evn.getProperty("hibernate.format_sql"));
+                setProperty("hibernate.show_sql", evn.getProperty("hibernate.show_sql"));
+                setProperty("hibernate.hbm2ddl.auto", evn.getProperty("hibernate.hbm2ddl.auto"));
+            }
+
+        };
+    }
+
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
-    }
-
-    Properties additionalProperties() {
-        Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        return properties;
     }
 
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames("messages");
-        messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
 
     @Bean
-    public SpringSecurityDialect securityDialect() {
+    public SpringSecurityDialect securityDialect(){
         return new SpringSecurityDialect();
     }
 
+    // Cấu hình để sử dụng các file nguồn tĩnh (css, image, js..)
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        String fileUpload = evn.getProperty("file_upload").toString();
+        // Image resource.
+        registry.addResourceHandler("/i/**") //
+                .addResourceLocations("file:" + fileUpload);
+    }
 }

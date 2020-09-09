@@ -16,7 +16,6 @@ import java.util.List;
 
 @Component
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
-
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
     @Override
@@ -47,10 +46,10 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
             roles.add(a.getAuthority());
         }
 
-        if (isAdmin(roles)) {
-            url = "/admin";
-        } else if (isDba(roles)) {
+        if (isDba(roles)) {
             url = "/dba";
+        } else if (isAdmin(roles)) {
+            url = "/admin";
         } else if (isUser(roles)) {
             url = "/home";
         } else {
@@ -88,5 +87,4 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     protected RedirectStrategy getRedirectStrategy() {
         return redirectStrategy;
     }
-
 }

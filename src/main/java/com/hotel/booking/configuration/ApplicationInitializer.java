@@ -9,12 +9,12 @@ import javax.servlet.Filter;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    private static Logger logger = LoggerFactory.getLogger(ApplicationInitializer.class);
+    private  static Logger logger = LoggerFactory.getLogger(ApplicationInitializer.class);
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
         logger.info("call");
-        return new Class[]{ApplicationConfig.class, SecurityWebApplicationInitializer.class};
+        return new Class[]{ApplicationConfig.class};
     }
 
     @Override
@@ -31,7 +31,6 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
-        characterEncodingFilter.setForceEncoding(true);
-        return new Filter[]{characterEncodingFilter};
+        return new Filter[] { characterEncodingFilter};
     }
 }
