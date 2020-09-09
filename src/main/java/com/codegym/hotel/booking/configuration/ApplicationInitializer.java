@@ -1,5 +1,7 @@
-package com.codegym.configuration;
+package com.codegym.hotel.booking.configuration;
 
+import com.codegym.hotel.booking.configuration.ApplicationConfig;
+import com.codegym.hotel.booking.configuration.SecurityWebApplicationInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -9,7 +11,7 @@ import javax.servlet.Filter;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    private static Logger logger = LoggerFactory.getLogger(com.codegym.hotel.booking.configuration.ApplicationInitializer.class);
+    private static Logger logger = LoggerFactory.getLogger(ApplicationInitializer.class);
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
