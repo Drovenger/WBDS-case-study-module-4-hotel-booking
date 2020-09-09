@@ -1,18 +1,18 @@
-package com.codegym.hotel.booking.configuration;
+package com.hotel.booking.configuration;
 
 
-import com.codegym.hotel.booking.repository.MessageRepository;
-import com.codegym.hotel.booking.repository.RoleRepository;
-import com.codegym.hotel.booking.repository.UserRepository;
-import com.codegym.hotel.booking.repository.impl.MessageRepositoryImpl;
-import com.codegym.hotel.booking.repository.impl.RoleRepositoryImpl;
-import com.codegym.hotel.booking.repository.impl.UserRepositoryImpl;
-import com.codegym.hotel.booking.service.MessageService;
-import com.codegym.hotel.booking.service.RoleService;
-import com.codegym.hotel.booking.service.UserService;
-import com.codegym.hotel.booking.service.impl.MessageServiceImpl;
-import com.codegym.hotel.booking.service.impl.RoleServiceImpl;
-import com.codegym.hotel.booking.service.impl.UserServiceImpl;
+import com.hotel.booking.repository.MessageRepository;
+import com.hotel.booking.repository.RoleRepository;
+import com.hotel.booking.repository.UserRepository;
+import com.hotel.booking.repository.impl.MessageRepositoryImpl;
+import com.hotel.booking.repository.impl.RoleRepositoryImpl;
+import com.hotel.booking.repository.impl.UserRepositoryImpl;
+import com.hotel.booking.service.MessageService;
+import com.hotel.booking.service.RoleService;
+import com.hotel.booking.service.UserService;
+import com.hotel.booking.service.impl.MessageServiceImpl;
+import com.hotel.booking.service.impl.RoleServiceImpl;
+import com.hotel.booking.service.impl.UserServiceImpl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +58,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
     private ApplicationContext applicationContext;
 
-    Logger logger = LoggerFactory.getLogger(com.codegym.hotel.booking.configuration.ApplicationConfig.class);
+    Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

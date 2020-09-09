@@ -1,4 +1,4 @@
-package com.codegym.hotel.booking.configuration;
+package com.hotel.booking.configuration;
 
 import com.codegym.hotel.booking.configuration.ApplicationConfig;
 import com.codegym.hotel.booking.configuration.SecurityWebApplicationInitializer;

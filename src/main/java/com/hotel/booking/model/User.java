@@ -1,4 +1,4 @@
-package com.codegym.hotel.booking.model;
+package com.hotel.booking.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
