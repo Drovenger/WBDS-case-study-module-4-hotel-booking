@@ -9,7 +9,7 @@ import javax.servlet.Filter;
 
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    private static Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationInitializer.class);
+//    private static Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationInitializer.class);
 
     @Override
     protected Class<?>[] getRootConfigClasses() {

@@ -1,6 +1,7 @@
 package com.codegym.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.validation.Errors;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -12,6 +13,7 @@ import java.util.List;
 @Table(name = "user")
 public class User {
 
+    @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -60,18 +62,7 @@ public class User {
     public User() {
     }
 
-    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.gender = gender;
-        this.date_of_birth = date_of_birth;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-
+//
     public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles) {
         this.id = id;
         this.first_name = first_name;
@@ -173,4 +164,7 @@ public class User {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
+
+
 }

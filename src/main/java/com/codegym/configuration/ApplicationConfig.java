@@ -1,18 +1,18 @@
 package com.codegym.configuration;
 
-
-import com.codegym.repository.MessageRepository;
-import com.codegym.repository.RoleRepository;
-import com.codegym.repository.UserRepository;
-import com.codegym.repository.impl.MessageRepositoryImpl;
-import com.codegym.repository.impl.RoleRepositryImpl;
-import com.codegym.repository.impl.UserRepositoryImpl;
-import com.codegym.service.MessageService;
-import com.codegym.service.RoleService;
-import com.codegym.service.UserService;
-import com.codegym.service.impl.MessageServiceImpl;
-import com.codegym.service.impl.RoleServiceImpl;
-import com.codegym.service.impl.UserServiceImpl;
+//
+//import com.codegym.repository.MessageRepository;
+//import com.codegym.repository.RoleRepository;
+//import com.codegym.repository.UserRepository;
+//import com.codegym.repository.impl.MessageRepositoryImpl;
+//import com.codegym.repository.impl.RoleRepositryImpl;
+//import com.codegym.repository.impl.UserRepositoryImpl;
+//import com.codegym.service.MessageService;
+//import com.codegym.service.RoleService;
+//import com.codegym.service.UserService;
+//import com.codegym.service.impl.MessageServiceImpl;
+//import com.codegym.service.impl.RoleServiceImpl;
+//import com.codegym.service.impl.UserServiceImpl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,47 +53,47 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableSpringDataWebSupport
 @ComponentScan("com.codegym")
-@EnableJpaRepositories("com.codegym.repository")
+//@EnableJpaRepositories("com.codegym.repository")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
-    Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationConfig.class);
+//    Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationConfig.class);
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public UserRepository userRepository() {
-        return new UserRepositoryImpl();
-    }
-
-    @Bean
-    public UserService userService() {
-        return new UserServiceImpl();
-    }
-
-    @Bean
-    public RoleRepository roleRepository() {
-        return new RoleRepositryImpl();
-    }
-
-    @Bean
-    public RoleService roleService() {
-        return new RoleServiceImpl();
-    }
-
-    @Bean
-    public MessageRepository messageRepository() {
-        return new MessageRepositoryImpl();
-    }
-
-    @Bean
-    public MessageService messageService() {
-        return new MessageServiceImpl();
-    }
+//    @Bean
+//    public UserRepository userRepository() {
+//        return new UserRepositoryImpl();
+//    }
+//
+//    @Bean
+//    public UserService userService() {
+//        return new UserServiceImpl();
+//    }
+//
+//    @Bean
+//    public RoleRepository roleRepository() {
+//        return new RoleRepositryImpl();
+//    }
+//
+//    @Bean
+//    public RoleService roleService() {
+//        return new RoleServiceImpl();
+//    }
+//
+//    @Bean
+//    public MessageRepository messageRepository() {
+//        return new MessageRepositoryImpl();
+//    }
+//
+//    @Bean
+//    public MessageService messageService() {
+//        return new MessageServiceImpl();
+//    }
 
     //Thymeleaf Configuration
     @Bean
@@ -123,41 +123,42 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     //JPA configuration
-    @Bean
-    @Qualifier(value = "entityManager")
-    public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
-        return entityManagerFactory.createEntityManager();
-    }
-
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[]{"com.codegym.model"});
-
-        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaProperties(additionalProperties());
-        logger.info("call model");
-        return em;
-    }
+//    @Bean
+//    @Qualifier(value = "entityManager")
+//    public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
+//        return entityManagerFactory.createEntityManager();
+//    }
+//
+//    @Bean
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+//        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+//        em.setDataSource(dataSource());
+//        em.setPackagesToScan(new String[]{"com.codegym.model"});
+//
+//        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+//        em.setJpaVendorAdapter(vendorAdapter);
+//        em.setJpaProperties(additionalProperties());
+//        logger.info("call model");
+//        return em;
+//    }
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/cms?verifyServerCertificate=false&useSSL=false");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/hotel_booking?verifyServerCertificate=false&useSSL=false");
         dataSource.setUsername("root");
-        dataSource.setPassword("Mc11041992$");
+        dataSource.setPassword("123456");
         return dataSource;
     }
 
-    @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(emf);
-        return transactionManager;
-    }
+//
+//    @Bean
+//    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+//        JpaTransactionManager transactionManager = new JpaTransactionManager();
+//        transactionManager.setEntityManagerFactory(emf);
+//        return transactionManager;
+//    }
 
     Properties additionalProperties() {
         Properties properties = new Properties();
