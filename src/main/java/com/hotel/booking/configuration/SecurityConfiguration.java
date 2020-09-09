@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
@@ -29,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
@@ -43,18 +44,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/home").access("hasRole('USER')")
-                .antMatchers("/dba/**").access("hasRole('DBA')")
-                .antMatchers("/**").access("hasRole('ADMIN')")
+                .antMatchers("/").permitAll()
+                .antMatchers( "/home").access("hasAnyRole('USER','DBA','ADMIN')")
+                .antMatchers("/admin/**").access("hasRole('ADMIN')")
+                .antMatchers("/dba/**").access("hasAnyRole('DBA','ADMIN')")
                 .and().formLogin().successHandler(customSuccessHandler)
                 .usernameParameter("ssoId").passwordParameter("password")
                 .and().csrf()
-                .and().exceptionHandling().accessDeniedPage("/accessDenied");
+                .and().exceptionHandling().accessDeniedPage("/accessDenied")
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
 
-    PersistentTokenRepository persistentTokenRepository() {
+    PersistentTokenRepository persistentTokenRepository(){
         JdbcTokenRepositoryImpl tokenRepositoryImpl = new JdbcTokenRepositoryImpl();
         tokenRepositoryImpl.setDataSource(dataSource);
         return tokenRepositoryImpl;
     }
 }
+
