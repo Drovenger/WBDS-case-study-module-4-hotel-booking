@@ -1,4 +1,4 @@
-package com.codegym.hotel.booking.configuration;
+package com.hotel.booking.configuration;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
