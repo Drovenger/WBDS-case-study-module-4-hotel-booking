@@ -3,8 +3,11 @@ package com.hotel.booking.service;
 import com.hotel.booking.model.User;
 import com.hotel.booking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,7 +29,17 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        User user = new User();
+
+
+        try {
+            user = userRepository.findByUsername(username);
+        } catch (UsernameNotFoundException e) {
+            throw new UsernameNotFoundException("Name " + username + "not found");
+        }
+//        User user = userRepository.findByUserName(username)
+//                .orElseThrow(() -> new UsernameNotFoundException("Name " + username + " not found"));
+
         return new org.springframework.security.core.userdetails.User(user.getUsername(),passwordEncoder.encode(user.getPassword()) ,
                 getAuthorities(user));
     }

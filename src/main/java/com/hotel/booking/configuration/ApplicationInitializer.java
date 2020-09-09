@@ -14,7 +14,7 @@ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherSe
     @Override
     protected Class<?>[] getRootConfigClasses() {
         logger.info("call");
-        return new Class[]{ApplicationConfig.class};
+        return new Class[]{ApplicationConfig.class, SecurityWebApplicationInitializer.class};
     }
 
     @Override

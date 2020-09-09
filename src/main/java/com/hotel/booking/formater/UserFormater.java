@@ -1,6 +1,5 @@
 package com.hotel.booking.formater;
 
-import com.hotel.booking.exception.NotFoundException;
 import com.hotel.booking.model.User;
 import com.hotel.booking.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

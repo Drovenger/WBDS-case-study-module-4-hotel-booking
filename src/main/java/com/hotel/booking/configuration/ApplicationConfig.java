@@ -21,6 +21,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -63,7 +64,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public SpringResourceTemplateResolver templateResolver(){
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/WEB-INF/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -96,7 +97,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[]{"com.hotel.booking..model"});
+        em.setPackagesToScan(new String[]{"com.hotel.booking.model"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -157,5 +158,20 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         // Image resource.
         registry.addResourceHandler("/i/**") //
                 .addResourceLocations("file:" + fileUpload);
+    }
+
+
+// cau hinh file upload
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(5000000);
+        return multipartResolver;
+    }
+
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
     }
 }
