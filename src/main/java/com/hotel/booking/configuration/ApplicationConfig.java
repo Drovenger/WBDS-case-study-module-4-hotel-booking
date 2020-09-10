@@ -35,7 +35,6 @@ import org.thymeleaf.templatemode.TemplateMode;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
@@ -45,7 +44,7 @@ import java.util.Properties;
 @ComponentScan("com.hotel.booking")
 @EnableJpaRepositories("com.hotel.booking.repository")
 @PropertySources({
-        @PropertySource(value = "classpath:uploadfile.properties"),
+        @PropertySource(value = "classpath:file.properties"),
         @PropertySource(value = "classpath:application.properties")
 })
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
@@ -64,7 +63,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public SpringResourceTemplateResolver templateResolver(){
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/");
+        templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -152,12 +151,16 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     // Cấu hình để sử dụng các file nguồn tĩnh (css, image, js..)
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
+            "classpath:/META-INF/resources/", "classpath:/resources/",
+            "classpath:/static/", "classpath:/public/"};
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String fileUpload = evn.getProperty("file_upload").toString();
         // Image resource.
         registry.addResourceHandler("/i/**") //
                 .addResourceLocations("file:" + fileUpload);
+        registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
     }
 
 
@@ -167,6 +170,11 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
         multipartResolver.setMaxUploadSize(5000000);
         return multipartResolver;
+    }
+
+    @Bean
+    public CustomSuccessHandler customSuccessHandler() {
+        return new CustomSuccessHandler();
     }
 
     @Override
