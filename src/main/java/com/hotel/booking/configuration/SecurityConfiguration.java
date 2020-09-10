@@ -44,13 +44,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers( "/home").access("hasAnyRole('USER','MANAGER','ADMIN')")
+                .antMatchers("/", "/home").permitAll()
+                .antMatchers( "/account").access("hasAnyRole('USER','MANAGER','ADMIN')")
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .antMatchers("/dba/**").access("hasAnyRole('MANAGER','ADMIN')")
-                .and().formLogin().successHandler(customSuccessHandler)
-                .usernameParameter("ssoId").passwordParameter("password")
-                .and().csrf()
+                .and().csrf().disable().formLogin()
+                .loginProcessingUrl("/loginForm")
+                .loginPage("/login")
+                .successHandler(customSuccessHandler)
+                .usernameParameter("username").passwordParameter("password")
                 .and().exceptionHandling().accessDeniedPage("/accessDenied")
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
