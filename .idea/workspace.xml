@@ -20,6 +20,7 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -29,15 +30,43 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf143c3d-17b4-40c6-98a9-f1f2619fa5db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf143c3d-17b4-40c6-98a9-f1f2619fa5db.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/RoleRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-professor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-professor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/advance-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/advance-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-professors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-professors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-students.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/basic-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/basic-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/data-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/data-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/departments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/departments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dual-list-box.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dual-list-box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-professor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-professor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/google-map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/google-map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/images-cropper.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/images-cropper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/lock.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/lock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/multi-upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/multi-upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/password-meter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/password-meter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/password-recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/password-recovery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/professor-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/professor-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/student-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/student-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/widgets.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +95,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,6 +119,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -107,8 +138,11 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\admin" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\java\com\hotel\booking\configuration" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.hotel.booking.configuration" />
@@ -116,11 +150,9 @@
       <recent name="com.hotel.booking.service.admin" />
       <recent name="com.hotel.booking.exception" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\admin" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\java\com\hotel\booking\configuration" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -159,7 +191,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_WBDS-case-study-module-4-hotel-booking_2" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_WBDS-case-study-module-4-hotel-booking_3" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -167,7 +199,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52711" />
+        <option name="DEBUG_PORT" value="53215" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -219,8 +251,15 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Gradle : com.codegym : WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" />
         </option>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.codegym : WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war (exploded)" />
+        </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle./Users/mac/CodeGym/Module4/weed1/case-study-04 [build]" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.57" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle./Users/mac/CodeGym/Module4/weed1/case-study-04 [build]" />
@@ -255,6 +294,8 @@
       <workItem from="1599709062102" duration="134000" />
       <workItem from="1599709213454" duration="1364000" />
       <workItem from="1599710672073" duration="1728000" />
+      <workItem from="1599723206553" duration="1712000" />
+      <workItem from="1599725331686" duration="133000" />
     </task>
     <servers />
   </component>
@@ -266,7 +307,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -280,79 +333,80 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="686" y="221" key="#BuildArtifactsBeforeRunChooser" timestamp="1599636109542">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="858" y="325" key="#BuildArtifactsBeforeRunChooser" timestamp="1599721791453">
+      <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state x="686" y="221" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1599636109542" />
-    <state x="451" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599710839088">
+    <state x="858" y="325" key="#BuildArtifactsBeforeRunChooser/0.23.1920.1125@0.23.1920.1125" timestamp="1599721791453" />
+    <state x="451" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599721795084">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599636114166" />
-    <state x="451" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1125@0.23.1920.1125" timestamp="1599710839088" />
+    <state x="451" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1125@0.23.1920.1125" timestamp="1599721795084" />
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1599638216364">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599638216364" />
-    <state width="1294" height="304" key="GridCell.Tab.0.bottom" timestamp="1599711352801">
+    <state width="1294" height="304" key="GridCell.Tab.0.bottom" timestamp="1599725464553">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599661661687" />
-    <state width="1294" height="304" key="GridCell.Tab.0.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352801" />
-    <state width="1294" height="304" key="GridCell.Tab.0.center" timestamp="1599711352800">
+    <state width="1294" height="304" key="GridCell.Tab.0.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464553" />
+    <state width="1294" height="304" key="GridCell.Tab.0.center" timestamp="1599725464552">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599661661687" />
-    <state width="1294" height="304" key="GridCell.Tab.0.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352800" />
-    <state width="1294" height="304" key="GridCell.Tab.0.left" timestamp="1599711352800">
+    <state width="1294" height="304" key="GridCell.Tab.0.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464552" />
+    <state width="1294" height="304" key="GridCell.Tab.0.left" timestamp="1599725464552">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599661661687" />
-    <state width="1294" height="304" key="GridCell.Tab.0.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352800" />
-    <state width="1294" height="304" key="GridCell.Tab.0.right" timestamp="1599711352801">
+    <state width="1294" height="304" key="GridCell.Tab.0.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464552" />
+    <state width="1294" height="304" key="GridCell.Tab.0.right" timestamp="1599725464553">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599661661687" />
-    <state width="1294" height="304" key="GridCell.Tab.0.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352801" />
-    <state width="1294" height="304" key="GridCell.Tab.1.bottom" timestamp="1599711352598">
+    <state width="1294" height="304" key="GridCell.Tab.0.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464553" />
+    <state width="1294" height="304" key="GridCell.Tab.1.bottom" timestamp="1599725464554">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599661629730" />
-    <state width="1294" height="304" key="GridCell.Tab.1.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352598" />
-    <state width="1294" height="304" key="GridCell.Tab.1.center" timestamp="1599711352597">
+    <state width="1294" height="304" key="GridCell.Tab.1.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464554" />
+    <state width="1294" height="304" key="GridCell.Tab.1.center" timestamp="1599725464554">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599661629730" />
-    <state width="1294" height="304" key="GridCell.Tab.1.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352597" />
-    <state width="1294" height="304" key="GridCell.Tab.1.left" timestamp="1599711352597">
+    <state width="1294" height="304" key="GridCell.Tab.1.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464554" />
+    <state width="1294" height="304" key="GridCell.Tab.1.left" timestamp="1599725464554">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599661629730" />
-    <state width="1294" height="304" key="GridCell.Tab.1.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352597" />
-    <state width="1294" height="304" key="GridCell.Tab.1.right" timestamp="1599711352597">
+    <state width="1294" height="304" key="GridCell.Tab.1.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464554" />
+    <state width="1294" height="304" key="GridCell.Tab.1.right" timestamp="1599725464554">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599661629730" />
-    <state width="1294" height="304" key="GridCell.Tab.1.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352597" />
-    <state width="1294" height="304" key="GridCell.Tab.2.bottom" timestamp="1599711352599">
+    <state width="1294" height="304" key="GridCell.Tab.1.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464554" />
+    <state width="1294" height="304" key="GridCell.Tab.2.bottom" timestamp="1599725464555">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599661508201" />
-    <state width="1294" height="304" key="GridCell.Tab.2.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352599" />
-    <state width="1294" height="304" key="GridCell.Tab.2.center" timestamp="1599711352599">
+    <state width="1294" height="304" key="GridCell.Tab.2.bottom/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464555" />
+    <state width="1294" height="304" key="GridCell.Tab.2.center" timestamp="1599725464555">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599661508201" />
-    <state width="1294" height="304" key="GridCell.Tab.2.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352599" />
-    <state width="1294" height="304" key="GridCell.Tab.2.left" timestamp="1599711352598">
+    <state width="1294" height="304" key="GridCell.Tab.2.center/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464555" />
+    <state width="1294" height="304" key="GridCell.Tab.2.left" timestamp="1599725464554">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599661508201" />
-    <state width="1294" height="304" key="GridCell.Tab.2.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352598" />
-    <state width="1294" height="304" key="GridCell.Tab.2.right" timestamp="1599711352599">
+    <state width="1294" height="304" key="GridCell.Tab.2.left/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464554" />
+    <state width="1294" height="304" key="GridCell.Tab.2.right" timestamp="1599725464555">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="1493" height="460" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599661508201" />
-    <state width="1294" height="304" key="GridCell.Tab.2.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599711352599" />
+    <state width="1294" height="304" key="GridCell.Tab.2.right/0.23.1920.1125@0.23.1920.1125" timestamp="1599725464555" />
     <state width="1493" height="460" key="GridCell.Tab.3.bottom" timestamp="1599661508201">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -373,18 +427,20 @@
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
     <state width="243" height="457" key="HiddenNamespacesPopup/0.23.1920.1125@0.23.1920.1125" timestamp="1599711254281" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1599625656507">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
-    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1599625656507">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
-    <state x="448" y="167" key="SettingsEditor" timestamp="1599710967200">
+    <state x="184" y="112" key="MergeDialog" timestamp="1599721429969">
       <screen x="0" y="23" width="1920" height="1125" />
     </state>
-    <state x="448" y="167" key="SettingsEditor/0.23.1920.1125@0.23.1920.1125" timestamp="1599710967200" />
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
+    <state x="184" y="112" key="MergeDialog/0.23.1920.1125@0.23.1920.1125" timestamp="1599721429969" />
+    <state x="158" y="261" width="1219" height="463" key="MultipleFileMergeDialog" timestamp="1599721472561">
+      <screen x="0" y="23" width="1920" height="1125" />
+    </state>
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
+    <state x="158" y="261" width="1219" height="463" key="MultipleFileMergeDialog/0.23.1920.1125@0.23.1920.1125" timestamp="1599721472561" />
+    <state x="448" y="167" key="SettingsEditor" timestamp="1599721805441">
+      <screen x="0" y="23" width="1920" height="1125" />
+    </state>
+    <state x="448" y="167" key="SettingsEditor/0.23.1920.1125@0.23.1920.1125" timestamp="1599721805441" />
     <state x="327" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1599625731484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

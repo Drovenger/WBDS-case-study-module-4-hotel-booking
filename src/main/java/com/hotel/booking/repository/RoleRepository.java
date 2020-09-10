@@ -1,4 +1,13 @@
 package com.hotel.booking.repository;
 
-public interface RoleRepository {
+import com.hotel.booking.model.Role;
+
+interface RoleService {
+    Iterable<Role> findAll();
+
+    Role findById(Long id);
+
+    void save(Role role);
+
+    void remove(Long id);
 }

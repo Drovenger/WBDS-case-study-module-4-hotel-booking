@@ -6,10 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SecurityController {
@@ -52,12 +50,17 @@ public class SecurityController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
-        return "admin/login";
+        return "user/login";
     }
 
     @RequestMapping("/logout")
     public String logout(){
-        return "admin/lock";
+        return "user/lock";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET )
+    public String register(ModelMap model) {
+        return "user/register";
     }
 
 }
