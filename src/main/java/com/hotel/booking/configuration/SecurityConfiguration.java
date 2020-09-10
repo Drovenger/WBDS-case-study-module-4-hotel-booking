@@ -48,6 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers( "/account").access("hasAnyRole('USER','MANAGER','ADMIN')")
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .antMatchers("/dba/**").access("hasAnyRole('MANAGER','ADMIN')")
+                //vo hieu hoa csrf
                 .and().csrf().disable().formLogin()
                 .loginProcessingUrl("/loginForm")
                 .loginPage("/login")
@@ -56,6 +57,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling().accessDeniedPage("/accessDenied")
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+
+        // Cấu hình Remember Me.
+        http.authorizeRequests().and() //
+                .rememberMe().tokenRepository(this.persistentTokenRepository()) //
+                .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
     }
 
     PersistentTokenRepository persistentTokenRepository(){
