@@ -1,4 +1,6 @@
 package com.hotel.booking.repository.impl;
 
-public class RoleRepositoryImpl {
+import com.hotel.booking.repository.RoleRepository;
+
+public class RoleRepositoryImpl implements RoleRepository {
 }

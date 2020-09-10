@@ -1,4 +1,6 @@
 package com.hotel.booking.repository.impl;
 
-public class MessageRepositoryImpl {
+import com.hotel.booking.repository.MessageRepository;
+
+public class MessageRepositoryImpl implements MessageRepository {
 }
