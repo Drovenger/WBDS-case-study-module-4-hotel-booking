@@ -7,9 +7,11 @@ import com.hotel.booking.repository.UserRepository;
 import com.hotel.booking.repository.impl.MessageRepositoryImpl;
 import com.hotel.booking.repository.impl.RoleRepositoryImpl;
 import com.hotel.booking.repository.impl.UserRepositoryImpl;
+import com.hotel.booking.service.ManagerService;
 import com.hotel.booking.service.MessageService;
 import com.hotel.booking.service.RoleService;
 import com.hotel.booking.service.UserService;
+import com.hotel.booking.service.impl.ManagerServiceImpl;
 import com.hotel.booking.service.impl.MessageServiceImpl;
 import com.hotel.booking.service.impl.RoleServiceImpl;
 import com.hotel.booking.service.impl.UserServiceImpl;
@@ -93,6 +95,11 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     @Bean
     public MessageService messageService() {
         return new MessageServiceImpl();
+    }
+
+    @Bean
+    public ManagerService managerService() {
+        return new ManagerServiceImpl();
     }
 
     //Thymeleaf Configuration
