@@ -5,14 +5,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
+//@SessionAttributes("bill") //tim session ten bill
 public class SecurityController {
+    //gan session khi khong tim thay
+//    @ModelAttribute("bill")
+//    public Bill getBill () {
+//        return new Bill();
+//    }
+
     // lay user name trong Authen ra
     private String getPrincipal(){
         String userName = null;
@@ -27,38 +32,46 @@ public class SecurityController {
     }
 
 
-    @GetMapping(value = {"/", "/home"})
-    public String Homepage(Model model){
+    @GetMapping(value = {"/"})
+    public String Homepage(Model model, HttpSession session){
+        //set time die session
+        //session.setMaxInactiveInterval(100);
+        
         model.addAttribute("user", getPrincipal());
-        return "admin/widgets";
+        return "account/register";
+    }
+
+    @RequestMapping("/home")
+    public String home(){
+        return "views/admin/widgets";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/404";
+        return "error/404";
     }
 
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/500";
+        return "error/500";
     }
 
     @RequestMapping(value = "/dba", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/404";
+        return "erroe/404";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
-        return "admin/login";
+        return "account/login";
     }
 
     @RequestMapping("/logout")
     public String logout(){
-        return "admin/lock";
+        return "account/lock";
     }
 
 }
