@@ -1,4 +1,8 @@
 package com.hotel.booking.repository;
 
-public interface RoleRepository {
+import com.hotel.booking.model.Role;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RoleRepository extends CrudRepository<Role, Long> {
+
 }
