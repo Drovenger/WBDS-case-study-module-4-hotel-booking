@@ -20,421 +20,29 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4bf866b-1237-4cbd-8feb-2bf62b1e8f9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/03465f23f19c9b31771cc8acec61089cccc1845c/_fonts.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/03465f23f19c9b31771cc8acec61089cccc1845c/_mixin.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/03465f23f19c9b31771cc8acec61089cccc1845c/_responsive.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/03465f23f19c9b31771cc8acec61089cccc1845c/_theme_color.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/03465f23f19c9b31771cc8acec61089cccc1845c/style.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/2cfed2c448772d6e685873b773092857d3e4c2b3/_fonts.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/2cfed2c448772d6e685873b773092857d3e4c2b3/_mixin.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/2cfed2c448772d6e685873b773092857d3e4c2b3/_responsive.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/2cfed2c448772d6e685873b773092857d3e4c2b3/_theme_color.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/2cfed2c448772d6e685873b773092857d3e4c2b3/style.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/9568d30ed5d2cebc2ad5df4154c8df8099b75c0b/_mixin.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/9568d30ed5d2cebc2ad5df4154c8df8099b75c0b/_responsive.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/9568d30ed5d2cebc2ad5df4154c8df8099b75c0b/_theme_color.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/9568d30ed5d2cebc2ad5df4154c8df8099b75c0b/_variables.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/9568d30ed5d2cebc2ad5df4154c8df8099b75c0b/style.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/b687762b7660b1f71ae40e600add14c590cfdbc7/_mixin.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/b687762b7660b1f71ae40e600add14c590cfdbc7/_responsive.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/b687762b7660b1f71ae40e600add14c590cfdbc7/_theme_color.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/b687762b7660b1f71ae40e600add14c590cfdbc7/_variables.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/.sass-cache/b687762b7660b1f71ae40e600add14c590cfdbc7/style.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/classy-nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/nice-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/css/travel-icon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/FuturaLT-Book.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/FuturaLT-Book.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/FuturaLT-Book.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/FuturaLT-Book.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/classy.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/classy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/classy.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/classy.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/bg-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/bg-img/footer-map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/blog-img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/blog-img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/blog-img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/core-img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/core-img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/core-img/pattern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/core-img/trip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/js/active.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/js/bootstrap/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/js/bootstrap/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/js/jquery/jquery-2.2.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/js/plugins/plugins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/scss/_fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/scss/_mixin.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/scss/_responsive.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/scss/_theme_color.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/css/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/css/templatemo-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/africa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/antartica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/asia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/australia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/button-curve.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/dots-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/europe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/north-america.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/south-america.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/img/tm-img-07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/datepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/jquery-1.11.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/jquery.scrollTo.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/jquery.singlePageNav.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick-theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/slick/slick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/about-us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/elements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/rooms.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/services.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268/storage_v2/_src_/schema/baitap.WU_DrA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268/storage_v2/_src_/schema/baitap.WU_DrA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_11_20__11_19__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_11_20__11_19__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/ManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/manager/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/manager/ManagerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/impl/MessageRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/impl/RoleRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/impl/UserRepositoryImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/manager/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/impl/MessageRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/impl/RoleRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/impl/UserRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/accordions.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/alerts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/c3/c3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/calendar/fullcalendar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/calendar/fullcalendar.print.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/chosen/bootstrap-chosen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/chosen/chosen-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/code-editor/ambiance.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/code-editor/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/colorpicker/colorpicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/cropper/cropper.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/data-table/bootstrap-editable.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/data-table/bootstrap-table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/datapicker/colorpicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/datapicker/datepicker3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/dropzone/dropzone.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/duallistbox/bootstrap-duallistbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/editor/bootstrap-editable.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/editor/datetimepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/editor/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/editor/x-editor-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/educate-custon-icon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/form/all-type-forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/form/themesaller-forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/ionRangeSlider/sprite-skin-flat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/meanmenu.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/metisMenu/metisMenu-vertical.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/metisMenu/metisMenu.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/metisMenu/metisMenu.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/modals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/morrisjs/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/notifications/Lobibox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/notifications/notifications.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/owl.theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/owl.transitions.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/preloader/preloader-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/scrollbar/jquery.mCustomScrollbar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/select2/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/summernote/fonts/summernote.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/summernote/fonts/summernote.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/summernote/fonts/summernote.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/summernote/summernote.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/tabs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/touchspin/jquery.bootstrap-touchspin.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/tree-viewer/32px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/tree-viewer/throbber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/tree-viewer/tree-viewer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/educate-icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/educate-icon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/educate-icon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/blog-details/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/contact/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/contact/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/contact/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/contact/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/courses/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/courses/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/courses/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/cropper/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/green1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/logo/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/logo/logosn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/notification/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/book-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/book-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/book-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/book-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/pro4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/product/profile-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/profile/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/student/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/student/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/student/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/img/student/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/c3-charts/c3-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/c3-charts/c3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/c3-charts/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/calendar/fullcalendar-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/calendar/fullcalendar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/calendar/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/chart/jquery.peity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/chart/peity-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/charts/Chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/charts/area-chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/charts/bar-chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/charts/line-chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/charts/rounded-chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/chosen/chosen-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/chosen/chosen.jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/chosen/chosen.jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/code-editor/code-editor-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/code-editor/code-editor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/code-editor/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/colorpicker/color-picker-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/colorpicker/jquery.spectrum.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/counterup/counterup-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/counterup/jquery.counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/counterup/waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/cropper/cropper-actice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/cropper/cropper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-map/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-map/data-maps-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-map/datamaps.all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-map/topojson.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/bootstrap-editable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/bootstrap-table-editable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/bootstrap-table-export.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/bootstrap-table-resizable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/bootstrap-table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/colResizable-1.5.source.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/data-table-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/data-table/tableExport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/datapicker/bootstrap-datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/datapicker/bootstrap-datepicker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/datapicker/datepicker-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/datepicker/datepicker-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/datepicker/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/dropzone/dropzone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/duallistbox/duallistbox.active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/duallistbox/jquery.bootstrap-duallistbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/e-payment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/bootstrap-datetimepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/bootstrap-editable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/jquery.mockjax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/mock-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/editable/xediable-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/form-validation/form-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/form-validation/jquery.form.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/form-validation/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/google.maps/google.maps-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/icheck/icheck-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/icheck/icheck.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/input-mask/jasny-bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/ionRangeSlider/ion.rangeSlider.active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery-price-slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery.maskedinput.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery.meanmenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery.payform.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery.scrollUp.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery.sticky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/knob/jquery.knob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/knob/knob-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/masking-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/metisMenu/metisMenu-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/metisMenu/metisMenu.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/metisMenu/metisMenu.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/morrisjs/home3-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/morrisjs/morris-active-pro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/morrisjs/morris-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/morrisjs/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/morrisjs/raphael-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/multiple-email/multiple-email-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/notifications/Lobibox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/notifications/notification-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/password-meter/password-meter-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/password-meter/pwstrength-bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/password-meter/zxcvbn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/pdf/jquery.media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/pdf/pdf-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/peity/jquery.peity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/peity/peity-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/plugins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/rangle-slider/jquery-ui-1.10.4.custom.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/rangle-slider/jquery-ui-touch-punch.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/rangle-slider/rangle-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/scrollbar/jquery.mCustomScrollbar.concat.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/scrollbar/mCustomScrollbar-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/select2/select2-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/select2/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/sparkline/jquery.charts-sparkline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/sparkline/jquery.sparkline.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/sparkline/sparkline-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/summernote/summernote-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/summernote/summernote.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/tab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/tawk-chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/touchspin/jquery.bootstrap-touchspin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/touchspin/touchspin-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/tree-line/jstree.active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/tree-line/jstree.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/vendor/jquery-1.12.4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/vendor/modernizr-2.8.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/vendor/modernizr-custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/wizard/jquery.steps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/wizard/steps-active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/pdf/mamunur.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -483,12 +91,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources\static" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\error" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\static" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.hotel.booking.configuration" />
@@ -496,12 +104,12 @@
       <recent name="com.hotel.booking.service.admin" />
       <recent name="com.hotel.booking.exception" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources\static" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views\admin" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\error" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\static" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -603,7 +211,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -618,6 +226,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="686" y="221" key="#BuildArtifactsBeforeRunChooser" timestamp="1599636109542">
@@ -640,54 +249,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599794469498" />
-    <state width="1493" height="348" key="GridCell.Tab.0.bottom" timestamp="1599808872873">
+    <state width="1024" height="79" key="GridCell.Tab.0.bottom" timestamp="1599813865144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.0.center" timestamp="1599808872873">
+    <state width="1024" height="79" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599813865144" />
+    <state width="1024" height="79" key="GridCell.Tab.0.center" timestamp="1599813865144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.0.left" timestamp="1599808872873">
+    <state width="1024" height="79" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599813865144" />
+    <state width="1024" height="79" key="GridCell.Tab.0.left" timestamp="1599813865144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.0.right" timestamp="1599808872873">
+    <state width="1024" height="79" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599813865144" />
+    <state width="1024" height="79" key="GridCell.Tab.0.right" timestamp="1599813865144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.1.bottom" timestamp="1599808872873">
+    <state width="1024" height="79" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599813865144" />
+    <state width="1493" height="202" key="GridCell.Tab.1.bottom" timestamp="1599812573192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.1.center" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599812573192" />
+    <state width="1493" height="202" key="GridCell.Tab.1.center" timestamp="1599812573191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.1.left" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599812573191" />
+    <state width="1493" height="202" key="GridCell.Tab.1.left" timestamp="1599812573191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.1.right" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599812573191" />
+    <state width="1493" height="202" key="GridCell.Tab.1.right" timestamp="1599812573192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.2.bottom" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599812573192" />
+    <state width="1493" height="202" key="GridCell.Tab.2.bottom" timestamp="1599812573193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.2.center" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599812573193" />
+    <state width="1493" height="202" key="GridCell.Tab.2.center" timestamp="1599812573193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.2.left" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599812573193" />
+    <state width="1493" height="202" key="GridCell.Tab.2.left" timestamp="1599812573193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
-    <state width="1493" height="348" key="GridCell.Tab.2.right" timestamp="1599808872873">
+    <state width="1493" height="202" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599812573193" />
+    <state width="1493" height="202" key="GridCell.Tab.2.right" timestamp="1599812573193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599808872873" />
+    <state width="1493" height="202" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599812573193" />
     <state width="1493" height="258" key="GridCell.Tab.3.bottom" timestamp="1599704398645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -704,18 +313,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="258" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1599704398645" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1599625656507">
+    <state x="147" y="65" key="MergeDialog" timestamp="1599812338368">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
-    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1599625656507">
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599812338368" />
+    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1599812338375">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599812338375" />
     <state x="327" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1599625731484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="327" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625731484" />
+    <state x="612" y="185" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1599812510796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="612" y="185" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1599812510796" />
     <state x="93" y="93" width="1350" height="638" key="dock-window-1" timestamp="1599723127670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

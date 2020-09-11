@@ -1,11 +1,7 @@
 package com.hotel.booking.configuration;
 
-import com.hotel.booking.repository.MessageRepository;
-import com.hotel.booking.repository.RoleRepository;
-import com.hotel.booking.repository.UserRepository;
-//import com.hotel.booking.repository.impl.MessageRepositoryImpl;
-//import com.hotel.booking.repository.impl.RoleRepositoryImpl;
-//import com.hotel.booking.repository.impl.UserRepositoryImpl;
+import com.hotel.booking.service.admin.RoleService;
+import com.hotel.booking.service.admin.RoleServiceImpl;
 import com.hotel.booking.service.manager.HotelService;
 import com.hotel.booking.service.manager.HotelServiceImpl;
 import com.hotel.booking.service.manager.ManagerService;
