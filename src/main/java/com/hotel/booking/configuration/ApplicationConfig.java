@@ -1,5 +1,23 @@
 package com.hotel.booking.configuration;
 
+
+import com.hotel.booking.repository.MessageRepository;
+import com.hotel.booking.repository.RoleRepository;
+import com.hotel.booking.repository.UserRepository;
+import com.hotel.booking.repository.impl.MessageRepositoryImpl;
+import com.hotel.booking.repository.impl.RoleRepositoryImpl;
+import com.hotel.booking.repository.impl.UserRepositoryImpl;
+import com.hotel.booking.service.manager.HotelService;
+import com.hotel.booking.service.manager.HotelServiceImpl;
+import com.hotel.booking.service.manager.ManagerService;
+import com.hotel.booking.service.user.MessageService;
+import com.hotel.booking.service.admin.RoleService;
+import com.hotel.booking.service.user.UserService;
+import com.hotel.booking.service.manager.ManagerServiceImpl;
+import com.hotel.booking.service.user.MessageServiceImpl;
+import com.hotel.booking.service.admin.RoleServiceImpl;
+import com.hotel.booking.service.user.UserServiceImpl;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -58,9 +76,47 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
+    @Bean
+    public UserRepository userRepository() {
+        return new UserRepositoryImpl();
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserServiceImpl();
+    }
+
+    @Bean
+    public RoleRepository roleRepository() {
+        return new RoleRepositoryImpl();
+    }
+
+    @Bean
+    public RoleService roleService() {
+        return new RoleServiceImpl();
+    }
+
+    @Bean
+    public MessageRepository messageRepository() {
+        return new MessageRepositoryImpl();
+    }
+
+    @Bean
+    public MessageService messageService() {
+        return new MessageServiceImpl();
+    }
+
+    @Bean
+    public ManagerService managerService() {
+        return new ManagerServiceImpl();
+    }
+
+    @Bean
+    public HotelService hotelService() {return new HotelServiceImpl();}
+
     //Thymeleaf Configuration
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
@@ -71,14 +127,14 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public TemplateEngine templateEngine(){
+    public TemplateEngine templateEngine() {
         TemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
 
     @Bean
-    public ThymeleafViewResolver viewResolver(){
+    public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
@@ -109,7 +165,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     Environment evn;
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(evn.getProperty("jdbc.driverClassName"));
         dataSource.setUrl(evn.getProperty("jdbc.url"));
@@ -120,7 +176,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
     Properties additionalProperties() {
 
-        return new Properties(){
+        return new Properties() {
             {
                 setProperty("hibernate.dialect", evn.getProperty("hibernate.dialect"));
                 setProperty("hibernate.format_sql", evn.getProperty("hibernate.format_sql"));
@@ -132,7 +188,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
@@ -142,11 +198,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames("messages");
+        messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
 
     @Bean
-    public SpringSecurityDialect securityDialect(){
+    public SpringSecurityDialect securityDialect() {
         return new SpringSecurityDialect();
     }
 
@@ -164,7 +221,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
 
-// cau hinh file upload
+    // cau hinh file upload
     @Bean(name = "multipartResolver")
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
