@@ -63,7 +63,7 @@ public class SecurityController {
     @RequestMapping(value = "/dba", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "erroe/404";
+        return "error/404";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
