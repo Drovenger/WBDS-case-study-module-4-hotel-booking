@@ -1,5 +1,8 @@
 package com.hotel.booking.configuration;
 
+import com.hotel.booking.converter.StringToLocalDateConverter;
+import com.hotel.booking.service.user.UserService;
+import com.hotel.booking.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -13,6 +16,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -63,7 +67,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public SpringResourceTemplateResolver templateResolver(){
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/WEB-INF/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -181,5 +185,17 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    @Bean
+    public UserService userService(){
+        return new UserServiceImpl();
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        StringToLocalDateConverter stringToLocalDateConverter = new
+                StringToLocalDateConverter("MM/dd/yyyy");
+        registry.addConverter(stringToLocalDateConverter);
     }
 }
