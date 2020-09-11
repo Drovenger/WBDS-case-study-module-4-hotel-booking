@@ -21,5 +21,7 @@ public class ManagerController {
     public ModelAndView list(@ModelAttribute("manager") Manager manager) {
         Iterable<Hotel> hotels = hotelService.findAllByManager(manager);
         ModelAndView modelAndView = new ModelAndView("management/");
+
+        return modelAndView;
     }
 }

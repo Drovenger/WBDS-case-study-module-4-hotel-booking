@@ -31,6 +31,17 @@ public class Hotel {
     @NotEmpty
     private Integer status;
 
+    private String img;
+
+    public Hotel(Integer id, @NotEmpty Manager manager, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status, String img) {
+        this.id = id;
+        this.manager = manager;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.img = img;
+    }
+
     public Hotel(Integer id, @NotEmpty Manager manager, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status) {
         this.id = id;
         this.manager = manager;
