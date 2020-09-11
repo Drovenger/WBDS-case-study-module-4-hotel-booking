@@ -20,12 +20,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4bf866b-1237-4cbd-8feb-2bf62b1e8f9c" name="Default Changelist" comment="" />
+    <list default="true" id="b4bf866b-1237-4cbd-8feb-2bf62b1e8f9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_10_2020_9_54_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_10_2020_9_54_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_10_2020_9_55_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_10_2020_9_55_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_9_2020_10_44_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_9_2020_10_44_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/database-design-csm4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/database-design-csm4.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +41,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -224,19 +240,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -256,11 +260,11 @@
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599636114166" />
     <state x="451" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599708188666" />
-    <state x="718" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1599728077174">
+    <state x="718" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1599792994343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599638216364" />
-    <state x="718" y="150" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599728077174" />
+    <state x="718" y="150" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599792994343" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1599723797570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,11 +345,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
-    <state x="509" y="220" width="971" height="477" key="MultipleFileMergeDialog" timestamp="1599722947361">
+    <state x="509" y="220" width="971" height="477" key="MultipleFileMergeDialog" timestamp="1599792803873">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1599625656507" />
-    <state x="509" y="220" width="971" height="477" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599722947361" />
+    <state x="509" y="220" width="971" height="477" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599792803873" />
     <state x="327" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1599625731484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -366,6 +370,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1599627954523" />
+    <state x="582" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599792775125">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="582" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599792775125" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1599723087505">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

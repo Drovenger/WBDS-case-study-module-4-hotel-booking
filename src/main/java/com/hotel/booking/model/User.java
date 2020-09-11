@@ -24,11 +24,7 @@ public class User {
 
     @Column(nullable = false)
     @NotEmpty
-    private int gender;
-
-    @Column(nullable = false)
-    @NotEmpty
-    private Date date_of_birth;
+    private Integer age;
 
     @Column(nullable = false)
     @Size(min = 9, max = 11)
@@ -57,62 +53,20 @@ public class User {
 
     private String img;
 
-    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.gender = gender;
-        this.date_of_birth = date_of_birth;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-        this.img = img;
-    }
-
-    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.gender = gender;
-        this.date_of_birth = date_of_birth;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-        this.img = img;
-    }
-
     public User() {
     }
 
-    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {
+    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty Integer age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
         this.first_name = first_name;
         this.last_name = last_name;
-        this.gender = gender;
-        this.date_of_birth = date_of_birth;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.gender = gender;
-        this.date_of_birth = date_of_birth;
+        this.age = age;
         this.phone = phone;
         this.address = address;
         this.email = email;
         this.username = username;
         this.password = password;
         this.roles = roles;
+        this.img = img;
     }
 
     public Integer getId() {
@@ -139,20 +93,12 @@ public class User {
         this.last_name = last_name;
     }
 
-    public int getGender() {
-        return gender;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setGender(int gender) {
-        this.gender = gender;
-    }
-
-    public Date getDate_of_birth() {
-        return date_of_birth;
-    }
-
-    public void setDate_of_birth(Date date_of_birth) {
-        this.date_of_birth = date_of_birth;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getPhone() {
@@ -201,5 +147,27 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty Integer age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+        this.img = img;
     }
 }
