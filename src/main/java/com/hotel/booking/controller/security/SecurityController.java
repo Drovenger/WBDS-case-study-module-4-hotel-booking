@@ -1,13 +1,22 @@
 package com.hotel.booking.controller.security;
 
+import com.hotel.booking.model.User;
+import com.hotel.booking.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+
+import javax.validation.Valid;
 
 @Controller
 public class SecurityController {
@@ -62,5 +71,28 @@ public class SecurityController {
     public String logout(){
         return "account/lock";
     }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register(ModelMap model) {
+        ModelAndView modelAndView = new ModelAndView("account/register");
+        modelAndView.addObject("user", new User());
+        return modelAndView;
+    }
+
+    @Autowired
+    UserService userService;
+
+    @PostMapping(value = "/submit")
+    public ModelAndView submit(@Validated @Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        new User().validate(user, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("account/register");
+            return modelAndView;
+        }
+        userService.save(user);
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        return modelAndView;
+    }
+
 
 }

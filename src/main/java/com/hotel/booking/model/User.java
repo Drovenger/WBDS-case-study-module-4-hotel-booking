@@ -1,5 +1,7 @@
 package com.hotel.booking.model;
 
+import org.springframework.validation.BindingResult;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -22,9 +24,9 @@ public class User {
     @NotEmpty
     private String last_name;
 
+
     @Column(nullable = false)
-    @NotEmpty
-    private Integer age;
+    private int age;
 
     @Column(nullable = false)
     @Size(min = 9, max = 11)
@@ -56,10 +58,22 @@ public class User {
     public User() {
     }
 
-    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty Integer age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
+//    public User(@NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {
+//        this.first_name = first_name;
+//        this.last_name = last_name;
+//        this.age=age;
+//        this.phone = phone;
+//        this.address = address;
+//        this.email = email;
+//        this.username = username;
+//        this.password = password;
+//    }
+
+    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.age = age;
+        this.age=age;
         this.phone = phone;
         this.address = address;
         this.email = email;
@@ -93,13 +107,15 @@ public class User {
         this.last_name = last_name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
+
+
 
     public String getPhone() {
         return phone;
@@ -147,6 +163,9 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public void validate(User user, BindingResult bindingResult) {
     }
 
     public String getImg() {
