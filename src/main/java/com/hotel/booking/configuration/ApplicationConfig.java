@@ -1,10 +1,5 @@
 package com.hotel.booking.configuration;
 
-import com.hotel.booking.repository.MessageRepository;
-import com.hotel.booking.repository.RoleRepository;
-import com.hotel.booking.repository.UserRepository;
-import com.hotel.booking.repository.impl.MessageRepositoryImpl;
-import com.hotel.booking.repository.impl.RoleRepositoryImpl;
 import com.hotel.booking.service.admin.RoleService;
 import com.hotel.booking.service.admin.RoleServiceImpl;
 import com.hotel.booking.service.manager.HotelService;
@@ -83,20 +78,20 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         return new UserServiceImpl();
     }
 
-    @Bean
-    public RoleRepository roleRepository() {
-        return new RoleRepositoryImpl();
-    }
+//    @Bean
+//    public RoleRepository roleRepository() {
+//        return new RoleRepositoryImpl();
+//    }
 
     @Bean
     public RoleService roleService() {
         return new RoleServiceImpl();
     }
 
-    @Bean
-    public MessageRepository messageRepository() {
-        return new MessageRepositoryImpl();
-    }
+//    @Bean
+//    public MessageRepository messageRepository() {
+//        return new MessageRepositoryImpl();
+//    }
 
     @Bean
     public MessageService messageService() {
@@ -205,16 +200,21 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     // Cấu hình để sử dụng các file nguồn tĩnh (css, image, js..)
-    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-            "classpath:/META-INF/resources/", "classpath:/resources/",
-            "classpath:/static/", "classpath:/public/"};
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String fileUpload = evn.getProperty("file_upload").toString();
         // Image resource.
         registry.addResourceHandler("/i/**") //
                 .addResourceLocations("file:" + fileUpload);
-        registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/META-INF/classes/resources/", "classpath:/resources/",
+                        "classpath:/static/", "classpath:/public/");
+        registry.addResourceHandler("/css_index/**")
+                .addResourceLocations("classpath:/META-INF/classes/resources/",
+                        "classpath:/resources/", "classpath:/index/", "classpath:/public/");
+        registry.addResourceHandler("/css_hotel/**")
+                .addResourceLocations("classpath:/META-INF/classes/resources/",
+                        "classpath:/resources/", "classpath:/hotel/", "classpath:/public/");
     }
 
 

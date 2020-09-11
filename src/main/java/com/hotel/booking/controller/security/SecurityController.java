@@ -21,12 +21,11 @@ import javax.validation.Valid;
 @Controller
 public class SecurityController {
     // lay user name trong Authen ra
-    private String getPrincipal() {
+    private String getPrincipal(){
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         if (principal instanceof UserDetails) {
-            userName = ((UserDetails) principal).getUsername();
+            userName = ((UserDetails)principal).getUsername();
         } else {
             userName = principal.toString();
         }
@@ -35,35 +34,32 @@ public class SecurityController {
 
 
     @GetMapping(value = {"/"})
-    public String Homepage(Model model, HttpSession session) {
-        //set time die session
-        //session.setMaxInactiveInterval(100);
-
+    public String Homepage(Model model, HttpSession session){
         model.addAttribute("user", getPrincipal());
-        return "account/register";
+        return "views/index";
     }
 
     @RequestMapping("/home")
-    public String home() {
+    public String home(){
         return "views/admin/widgets";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "error/404";
+        return "views/user/index";
     }
 
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "error/500";
+        return "views/user/rooms";
     }
 
     @RequestMapping(value = "/dba", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "erroe/404";
+        return "views/user/blog";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -72,7 +68,7 @@ public class SecurityController {
     }
 
     @RequestMapping("/logout")
-    public String logout() {
+    public String logout(){
         return "account/lock";
     }
 

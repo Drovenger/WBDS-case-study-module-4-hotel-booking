@@ -1,0 +1,10 @@
+git add, commit , push nhanh ca nhan
+git checkout dev
+if error: git checkout master, git pull origin master
+git checkout dev
+git pull origin dev
+git checkout nhanh ca nhan
+if error: git add .
+          dit stash -d -fx
+git checkout nhanh ca nhan
+git merge
