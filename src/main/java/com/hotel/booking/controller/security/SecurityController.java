@@ -10,19 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 
 @Controller
-//@SessionAttributes("bill") //tim session ten bill
 public class SecurityController {
-    //gan session khi khong tim thay
-//    @ModelAttribute("bill")
-//    public Bill getBill () {
-//        return new Bill();
-//    }
-
     // lay user name trong Authen ra
     private String getPrincipal(){
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         if (principal instanceof UserDetails) {
             userName = ((UserDetails)principal).getUsername();
         } else {
@@ -34,11 +26,8 @@ public class SecurityController {
 
     @GetMapping(value = {"/"})
     public String Homepage(Model model, HttpSession session){
-        //set time die session
-        //session.setMaxInactiveInterval(100);
-        
         model.addAttribute("user", getPrincipal());
-        return "account/register";
+        return "views/index";
     }
 
     @RequestMapping("/home")
@@ -49,19 +38,19 @@ public class SecurityController {
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "error/404";
+        return "views/user/index";
     }
 
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "error/500";
+        return "views/user/rooms";
     }
 
     @RequestMapping(value = "/dba", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "erroe/404";
+        return "views/user/blog";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
