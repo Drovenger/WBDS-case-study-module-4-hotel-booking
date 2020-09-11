@@ -1,0 +1,52 @@
+Index: src/main/java/com/hotel/booking/configuration/ApplicationConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.hotel.booking.configuration;\r\n\r\n\r\nimport com.hotel.booking.repository.MessageRepository;\r\nimport com.hotel.booking.repository.RoleRepository;\r\nimport com.hotel.booking.repository.UserRepository;\r\nimport com.hotel.booking.repository.impl.MessageRepositoryImpl;\r\nimport com.hotel.booking.repository.impl.RoleRepositoryImpl;\r\nimport com.hotel.booking.repository.impl.UserRepositoryImpl;\r\nimport com.hotel.booking.service.ManagerService;\r\nimport com.hotel.booking.service.MessageService;\r\nimport com.hotel.booking.service.RoleService;\r\nimport com.hotel.booking.service.UserService;\r\nimport com.hotel.booking.service.impl.ManagerServiceImpl;\r\nimport com.hotel.booking.service.impl.MessageServiceImpl;\r\nimport com.hotel.booking.service.impl.RoleServiceImpl;\r\nimport com.hotel.booking.service.impl.UserServiceImpl;\r\n\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.beans.BeansException;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\nimport org.springframework.context.ApplicationContext;\r\nimport org.springframework.context.ApplicationContextAware;\r\nimport org.springframework.context.MessageSource;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.ComponentScan;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.context.support.ResourceBundleMessageSource;\r\nimport org.springframework.data.jpa.repository.config.EnableJpaRepositories;\r\nimport org.springframework.data.web.config.EnableSpringDataWebSupport;\r\nimport org.springframework.jdbc.datasource.DriverManagerDataSource;\r\nimport org.springframework.orm.jpa.JpaTransactionManager;\r\nimport org.springframework.orm.jpa.JpaVendorAdapter;\r\nimport org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;\r\nimport org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;\r\nimport org.springframework.transaction.PlatformTransactionManager;\r\nimport org.springframework.transaction.annotation.EnableTransactionManagement;\r\nimport org.springframework.web.servlet.config.annotation.EnableWebMvc;\r\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;\r\nimport org.thymeleaf.TemplateEngine;\r\nimport org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;\r\nimport org.thymeleaf.spring4.SpringTemplateEngine;\r\nimport org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;\r\nimport org.thymeleaf.spring4.view.ThymeleafViewResolver;\r\nimport org.thymeleaf.templatemode.TemplateMode;\r\n\r\nimport javax.persistence.EntityManager;\r\nimport javax.persistence.EntityManagerFactory;\r\nimport javax.sql.DataSource;\r\nimport java.util.Properties;\r\n\r\n@Configuration\r\n@EnableWebMvc\r\n@EnableTransactionManagement\r\n@EnableSpringDataWebSupport\r\n@ComponentScan(\"com.codegym\")\r\n@EnableJpaRepositories(\"com.codegym.hotel.booking.repository\")\r\npublic class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {\r\n\r\n    private ApplicationContext applicationContext;\r\n\r\n    Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);\r\n\r\n    @Override\r\n    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {\r\n        this.applicationContext = applicationContext;\r\n    }\r\n\r\n    @Bean\r\n    public UserRepository userRepository() {\r\n        return new UserRepositoryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public UserService userService() {\r\n        return new UserServiceImpl();\r\n    }\r\n\r\n    @Bean\r\n    public RoleRepository roleRepository() {\r\n        return new RoleRepositoryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public RoleService roleService() {\r\n        return new RoleServiceImpl();\r\n    }\r\n\r\n    @Bean\r\n    public MessageRepository messageRepository() {\r\n        return new MessageRepositoryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public MessageService messageService() {\r\n        return new MessageServiceImpl();\r\n    }\r\n\r\n    @Bean\r\n    public ManagerService managerService() {\r\n        return new ManagerServiceImpl();\r\n    }\r\n\r\n    //Thymeleaf Configuration\r\n    @Bean\r\n    public SpringResourceTemplateResolver templateResolver() {\r\n        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();\r\n        templateResolver.setApplicationContext(applicationContext);\r\n        templateResolver.setPrefix(\"/WEB-INF/views/\");\r\n        templateResolver.setSuffix(\".html\");\r\n        templateResolver.setTemplateMode(TemplateMode.HTML);\r\n        templateResolver.setCharacterEncoding(\"UTF-8\");\r\n        return templateResolver;\r\n    }\r\n\r\n    @Bean\r\n    public TemplateEngine templateEngine() {\r\n        TemplateEngine templateEngine = new SpringTemplateEngine();\r\n        templateEngine.setTemplateResolver(templateResolver());\r\n        return templateEngine;\r\n    }\r\n\r\n    @Bean\r\n    public ThymeleafViewResolver viewResolver() {\r\n        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();\r\n        viewResolver.setTemplateEngine(templateEngine());\r\n        viewResolver.setCharacterEncoding(\"UTF-8\");\r\n        return viewResolver;\r\n    }\r\n\r\n    //JPA configuration\r\n    @Bean\r\n    @Qualifier(value = \"entityManager\")\r\n    public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {\r\n        return entityManagerFactory.createEntityManager();\r\n    }\r\n\r\n    @Bean\r\n    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {\r\n        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();\r\n        em.setDataSource(dataSource());\r\n        em.setPackagesToScan(new String[]{\"com.codegym.hotel.booking.model\"});\r\n\r\n        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();\r\n        em.setJpaVendorAdapter(vendorAdapter);\r\n        em.setJpaProperties(additionalProperties());\r\n        logger.info(\"call model\");\r\n        return em;\r\n    }\r\n\r\n    @Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(\"com.mysql.cj.jdbc.Driver\");\r\n        dataSource.setUrl(\"jdbc:mysql://localhost:3306/cms?verifyServerCertificate=false&useSSL=false\");\r\n        dataSource.setUsername(\"root\");\r\n        dataSource.setPassword(\"Mc11041992$\");\r\n        return dataSource;\r\n    }\r\n\r\n    @Bean\r\n    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {\r\n        JpaTransactionManager transactionManager = new JpaTransactionManager();\r\n        transactionManager.setEntityManagerFactory(emf);\r\n        return transactionManager;\r\n    }\r\n\r\n    Properties additionalProperties() {\r\n        Properties properties = new Properties();\r\n        properties.setProperty(\"hibernate.hbm2ddl.auto\", \"update\");\r\n        properties.setProperty(\"hibernate.dialect\", \"org.hibernate.dialect.MySQL5Dialect\");\r\n        return properties;\r\n    }\r\n\r\n    @Bean\r\n    public MessageSource messageSource() {\r\n        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();\r\n        messageSource.setBasenames(\"messages\");\r\n        messageSource.setDefaultEncoding(\"UTF-8\");\r\n        return messageSource;\r\n    }\r\n\r\n    @Bean\r\n    public SpringSecurityDialect securityDialect() {\r\n        return new SpringSecurityDialect();\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/hotel/booking/configuration/ApplicationConfig.java	(revision 67c53e4f1a31f0a3c0ba093eeb9ab19e28b44c97)
++++ src/main/java/com/hotel/booking/configuration/ApplicationConfig.java	(date 1599706453520)
+@@ -54,8 +54,8 @@
+ @EnableWebMvc
+ @EnableTransactionManagement
+ @EnableSpringDataWebSupport
+-@ComponentScan("com.codegym")
+-@EnableJpaRepositories("com.codegym.hotel.booking.repository")
++@ComponentScan("com.hotel.booking")
++@EnableJpaRepositories("com.hotel.booking.repository")
+ public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
+ 
+     private ApplicationContext applicationContext;
+@@ -67,6 +67,11 @@
+         this.applicationContext = applicationContext;
+     }
+ 
++    @Bean
++    public SpringSecurityDialect securityDialect() {
++        return new SpringSecurityDialect();
++    }
++
+     @Bean
+     public UserRepository userRepository() {
+         return new UserRepositoryImpl();
+@@ -140,7 +145,7 @@
+     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+         em.setDataSource(dataSource());
+-        em.setPackagesToScan(new String[]{"com.codegym.hotel.booking.model"});
++        em.setPackagesToScan(new String[]{"com.hotel.booking.model"});
+ 
+         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+         em.setJpaVendorAdapter(vendorAdapter);
+@@ -181,9 +186,4 @@
+         return messageSource;
+     }
+ 
+-    @Bean
+-    public SpringSecurityDialect securityDialect() {
+-        return new SpringSecurityDialect();
+-    }
+-
+ }
+\ No newline at end of file

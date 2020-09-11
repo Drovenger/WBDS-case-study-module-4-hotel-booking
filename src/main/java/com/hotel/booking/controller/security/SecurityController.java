@@ -12,6 +12,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 import javax.validation.Valid;
 
@@ -31,28 +34,36 @@ public class SecurityController {
     }
 
 
-    @GetMapping(value = {"/", "/home"})
-    public String Homepage(Model model){
+    @GetMapping(value = {"/"})
+    public String Homepage(Model model, HttpSession session){
+        //set time die session
+        //session.setMaxInactiveInterval(100);
+
         model.addAttribute("user", getPrincipal());
-        return "admin/widgets";
+        return "account/register";
+    }
+
+    @RequestMapping("/home")
+    public String home(){
+        return "views/admin/widgets";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/404";
+        return "error/404";
     }
 
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/500";
+        return "error/500";
     }
 
     @RequestMapping(value = "/dba", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "admin/404";
+        return "erroe/404";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

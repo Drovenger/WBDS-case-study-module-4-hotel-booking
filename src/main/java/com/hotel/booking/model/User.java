@@ -53,6 +53,8 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     private List<Role> roles;
 
+    private String img;
+
     public User() {
     }
 
@@ -78,6 +80,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.roles = roles;
+        this.img = img;
     }
 
     public Integer getId() {
@@ -163,5 +166,27 @@ public class User {
     }
 
     public void validate(User user, BindingResult bindingResult) {
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty Integer age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+        this.img = img;
     }
 }

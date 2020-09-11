@@ -15,6 +15,7 @@ create table if not exists hotel
     name        varchar(255)                       not null,
     description text                               null,
     status      int                                not null,
+    img         text                               null,
     create_date datetime default CURRENT_TIMESTAMP null,
     update_date datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP,
 
@@ -26,8 +27,10 @@ create table if not exists hotel_room
     id          int auto_increment primary key,
     hotel_id    int                                not null,
     name        varchar(255)                       not null,
+    price       double                             not null,
     description text                               null,
     status      int                                not null,
+    img         text                               null,
     create_date datetime default CURRENT_TIMESTAMP null,
     update_date datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP,
 
@@ -46,19 +49,6 @@ CREATE TABLE IF NOT EXISTS room_status
     CONSTRAINT status_room_fk FOREIGN KEY (room_id) REFERENCES hotel_room (id)
 ) charset = utf8mb4;
 
-create table if not exists attachment
-(
-    id          int auto_increment
-        primary key,
-    room_id     int                                not null,
-    image_link  text                               not null,
-    status      int                                not null,
-    create_date datetime default CURRENT_TIMESTAMP null,
-    update_date datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP,
-
-    constraint attachment_room_fk foreign key (room_id) references hotel_room (id)
-) charset = utf8mb4;
-
 create table if not exists role
 (
     id          int auto_increment primary key,
@@ -72,14 +62,14 @@ create table if not exists user
     id            int auto_increment primary key,
     first_name    varchar(255)                       not null,
     last_name     varchar(255)                       not null,
-    gender        bit                                not null,
-    date_of_birth date                               not null,
+    age           int                                not null,
     phone         varchar(30)                        not null,
     address       varchar(255)                       not null,
     email         varchar(255)                       not null,
     username      varchar(255)                       not null,
     password      varchar(50)                        not null,
     status        int                                not null,
+    img           text                               null,
     created_date  datetime default CURRENT_TIMESTAMP null,
     update_date   datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP
 ) charset = utf8mb4;
@@ -117,7 +107,7 @@ create table if not exists bill_details
 (
     id             int auto_increment primary key,
     bill_id        int                                not null,
-    room_status_id int                                not null,
+    room_id        int                                not null,
     price          double                             not null,
     create_date    datetime default CURRENT_TIMESTAMP null,
     update_date    datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP,
