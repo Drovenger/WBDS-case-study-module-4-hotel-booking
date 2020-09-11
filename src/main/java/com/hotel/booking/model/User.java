@@ -58,18 +58,18 @@ public class User {
     public User() {
     }
 
-    public User(@NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.age=age;
-        this.phone = phone;
-        this.address = address;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
+//    public User(@NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {
+//        this.first_name = first_name;
+//        this.last_name = last_name;
+//        this.age=age;
+//        this.phone = phone;
+//        this.address = address;
+//        this.email = email;
+//        this.username = username;
+//        this.password = password;
+//    }
 
-    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles) {
+    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, int age, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles, String img) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;

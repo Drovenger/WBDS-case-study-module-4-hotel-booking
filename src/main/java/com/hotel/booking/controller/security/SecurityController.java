@@ -21,12 +21,12 @@ import javax.validation.Valid;
 @Controller
 public class SecurityController {
     // lay user name trong Authen ra
-    private String getPrincipal(){
+    private String getPrincipal() {
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserDetails) {
-            userName = ((UserDetails)principal).getUsername();
+            userName = ((UserDetails) principal).getUsername();
         } else {
             userName = principal.toString();
         }
@@ -35,7 +35,7 @@ public class SecurityController {
 
 
     @GetMapping(value = {"/"})
-    public String Homepage(Model model, HttpSession session){
+    public String Homepage(Model model, HttpSession session) {
         //set time die session
         //session.setMaxInactiveInterval(100);
 
@@ -44,7 +44,7 @@ public class SecurityController {
     }
 
     @RequestMapping("/home")
-    public String home(){
+    public String home() {
         return "views/admin/widgets";
     }
 
@@ -72,11 +72,11 @@ public class SecurityController {
     }
 
     @RequestMapping("/logout")
-    public String logout(){
+    public String logout() {
         return "account/lock";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET )
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView register(ModelMap model) {
         ModelAndView modelAndView = new ModelAndView("account/register");
         modelAndView.addObject("user", new User());
@@ -84,16 +84,17 @@ public class SecurityController {
     }
 
     @Autowired
-    UserService  userService;
+    UserService userService;
+
     @PostMapping(value = "/submit")
-    public ModelAndView submit(@Validated @Valid @ModelAttribute("user") User user, BindingResult bindingResult){
-        new User().validate(user,bindingResult);
-        if(bindingResult.hasFieldErrors()){
+    public ModelAndView submit(@Validated @Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        new User().validate(user, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("account/register");
             return modelAndView;
         }
-        ModelAndView modelAndView = new ModelAndView("redirect:/");
         userService.save(user);
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
         return modelAndView;
     }
 

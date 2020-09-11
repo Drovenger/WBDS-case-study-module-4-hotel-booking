@@ -1,5 +1,20 @@
 package com.hotel.booking.configuration;
 
+import com.hotel.booking.repository.MessageRepository;
+import com.hotel.booking.repository.RoleRepository;
+import com.hotel.booking.repository.UserRepository;
+import com.hotel.booking.repository.impl.MessageRepositoryImpl;
+import com.hotel.booking.repository.impl.RoleRepositoryImpl;
+import com.hotel.booking.service.admin.RoleService;
+import com.hotel.booking.service.admin.RoleServiceImpl;
+import com.hotel.booking.service.manager.HotelService;
+import com.hotel.booking.service.manager.HotelServiceImpl;
+import com.hotel.booking.service.manager.ManagerService;
+import com.hotel.booking.service.manager.ManagerServiceImpl;
+import com.hotel.booking.service.user.MessageService;
+import com.hotel.booking.service.user.MessageServiceImpl;
+import com.hotel.booking.service.user.UserService;
+import com.hotel.booking.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -13,7 +28,6 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
-import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -59,10 +73,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public UserRepository userRepository() {
-        return new UserRepositoryImpl();
-    }
+//    @Bean
+//    public UserRepository userRepository() {
+//        return new UserRepositoryImpl();
+//    }
 
     @Bean
     public UserService userService() {
@@ -223,15 +237,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         configurer.enable();
     }
 
-    @Bean
-    public UserService userService(){
-        return new UserServiceImpl();
-    }
 
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        StringToLocalDateConverter stringToLocalDateConverter = new
-                StringToLocalDateConverter("MM/dd/yyyy");
-        registry.addConverter(stringToLocalDateConverter);
-    }
+
 }

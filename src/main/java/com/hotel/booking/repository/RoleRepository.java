@@ -1,13 +1,8 @@
 package com.hotel.booking.repository;
 
 import com.hotel.booking.model.Role;
+import org.springframework.data.repository.CrudRepository;
 
-interface RoleService {
-    Iterable<Role> findAll();
+public interface RoleRepository extends CrudRepository<Role, Long> {
 
-    Role findById(Long id);
-
-    void save(Role role);
-
-    void remove(Long id);
 }
