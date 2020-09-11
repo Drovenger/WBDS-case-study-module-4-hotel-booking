@@ -1,30 +1,32 @@
 package com.hotel.booking.controller.security;
 
+import com.hotel.booking.model.User;
+import com.hotel.booking.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-@Controller
-//@SessionAttributes("bill") //tim session ten bill
-public class SecurityController {
-    //gan session khi khong tim thay
-//    @ModelAttribute("bill")
-//    public Bill getBill () {
-//        return new Bill();
-//    }
+import javax.validation.Valid;
 
+@Controller
+public class SecurityController {
     // lay user name trong Authen ra
-    private String getPrincipal(){
+    private String getPrincipal() {
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserDetails) {
-            userName = ((UserDetails)principal).getUsername();
+            userName = ((UserDetails) principal).getUsername();
         } else {
             userName = principal.toString();
         }
@@ -33,16 +35,16 @@ public class SecurityController {
 
 
     @GetMapping(value = {"/"})
-    public String Homepage(Model model, HttpSession session){
+    public String Homepage(Model model, HttpSession session) {
         //set time die session
         //session.setMaxInactiveInterval(100);
-        
+
         model.addAttribute("user", getPrincipal());
         return "account/register";
     }
 
     @RequestMapping("/home")
-    public String home(){
+    public String home() {
         return "views/admin/widgets";
     }
 
@@ -70,8 +72,31 @@ public class SecurityController {
     }
 
     @RequestMapping("/logout")
-    public String logout(){
+    public String logout() {
         return "account/lock";
     }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register(ModelMap model) {
+        ModelAndView modelAndView = new ModelAndView("account/register");
+        modelAndView.addObject("user", new User());
+        return modelAndView;
+    }
+
+    @Autowired
+    UserService userService;
+
+    @PostMapping(value = "/submit")
+    public ModelAndView submit(@Validated @Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        new User().validate(user, bindingResult);
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("account/register");
+            return modelAndView;
+        }
+        userService.save(user);
+        ModelAndView modelAndView = new ModelAndView("redirect:/");
+        return modelAndView;
+    }
+
 
 }

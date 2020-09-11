@@ -1,23 +1,20 @@
 package com.hotel.booking.configuration;
 
-
 import com.hotel.booking.repository.MessageRepository;
 import com.hotel.booking.repository.RoleRepository;
 import com.hotel.booking.repository.UserRepository;
 import com.hotel.booking.repository.impl.MessageRepositoryImpl;
 import com.hotel.booking.repository.impl.RoleRepositoryImpl;
-import com.hotel.booking.repository.impl.UserRepositoryImpl;
+import com.hotel.booking.service.admin.RoleService;
+import com.hotel.booking.service.admin.RoleServiceImpl;
 import com.hotel.booking.service.manager.HotelService;
 import com.hotel.booking.service.manager.HotelServiceImpl;
 import com.hotel.booking.service.manager.ManagerService;
-import com.hotel.booking.service.user.MessageService;
-import com.hotel.booking.service.admin.RoleService;
-import com.hotel.booking.service.user.UserService;
 import com.hotel.booking.service.manager.ManagerServiceImpl;
+import com.hotel.booking.service.user.MessageService;
 import com.hotel.booking.service.user.MessageServiceImpl;
-import com.hotel.booking.service.admin.RoleServiceImpl;
+import com.hotel.booking.service.user.UserService;
 import com.hotel.booking.service.user.UserServiceImpl;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -76,10 +73,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public UserRepository userRepository() {
-        return new UserRepositoryImpl();
-    }
+//    @Bean
+//    public UserRepository userRepository() {
+//        return new UserRepositoryImpl();
+//    }
 
     @Bean
     public UserService userService() {
@@ -239,4 +236,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+
+
+
 }
