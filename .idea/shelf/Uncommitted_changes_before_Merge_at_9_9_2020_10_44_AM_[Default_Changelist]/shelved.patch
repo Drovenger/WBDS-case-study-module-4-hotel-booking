@@ -1,0 +1,505 @@
+Index: src/main/java/com/codegym/configuration/SecurityConfiguration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.configuration;\r\n\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;\r\nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\r\nimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;\r\nimport org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;\r\nimport org.springframework.security.core.userdetails.UserDetailsService;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.security.crypto.password.PasswordEncoder;\r\nimport org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;\r\nimport org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;\r\n\r\nimport javax.sql.DataSource;\r\n\r\n@Configuration\r\n@EnableWebSecurity\r\npublic class SecurityConfiguration extends WebSecurityConfigurerAdapter {\r\n\r\n    @Autowired\r\n    private UserDetailsService customUserDetailsService;\r\n\r\n    @Autowired\r\n    CustomSuccessHandler customSuccessHandler;\r\n\r\n    @Autowired\r\n    private DataSource dataSource;\r\n\r\n    @Bean\r\n    public PasswordEncoder passwordEncoder() {\r\n        return new BCryptPasswordEncoder();\r\n    }\r\n\r\n    @Autowired\r\n    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {\r\n        auth\r\n                .userDetailsService(customUserDetailsService)\r\n                .passwordEncoder(passwordEncoder());\r\n    }\r\n\r\n    @Override\r\n    protected void configure(HttpSecurity http) throws Exception {\r\n        http.authorizeRequests()\r\n                .antMatchers(\"/\", \"/home\").access(\"hasRole('USER')\")\r\n                .antMatchers(\"/dba/**\").access(\"hasRole('DBA')\")\r\n                .antMatchers(\"/**\").access(\"hasRole('ADMIN')\")\r\n                .and().formLogin().successHandler(customSuccessHandler)\r\n                .usernameParameter(\"ssoId\").passwordParameter(\"password\")\r\n                .and().csrf()\r\n                .and().exceptionHandling().accessDeniedPage(\"/accessDenied\");\r\n    }\r\n\r\n    PersistentTokenRepository persistentTokenRepository() {\r\n        JdbcTokenRepositoryImpl tokenRepositoryImpl = new JdbcTokenRepositoryImpl();\r\n        tokenRepositoryImpl.setDataSource(dataSource);\r\n        return tokenRepositoryImpl;\r\n    }\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/configuration/SecurityConfiguration.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/configuration/SecurityConfiguration.java	(date 1599621960975)
+@@ -1,4 +1,4 @@
+-package com.codegym.configuration;
++package com.codegym.hotel.booking.configuration;
+ 
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.context.annotation.Bean;
+Index: src/main/java/com/codegym/configuration/CustomSuccessHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.configuration;\r\n\r\nimport org.springframework.security.core.Authentication;\r\nimport org.springframework.security.core.GrantedAuthority;\r\nimport org.springframework.security.web.DefaultRedirectStrategy;\r\nimport org.springframework.security.web.RedirectStrategy;\r\nimport org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;\r\nimport org.springframework.stereotype.Component;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.Collection;\r\nimport java.util.List;\r\n\r\n@Component\r\npublic class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {\r\n\r\n    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();\r\n\r\n    @Override\r\n    protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)\r\n            throws IOException {\r\n        String targetUrl = determineTargetUrl(authentication);\r\n\r\n        if (response.isCommitted()) {\r\n            System.out.println(\"Can't redirect\");\r\n            return;\r\n        }\r\n\r\n        redirectStrategy.sendRedirect(request, response, targetUrl);\r\n    }\r\n\r\n    /*\r\n     * This method extracts the roles of currently logged-in user and returns\r\n     * appropriate URL according to his/her role.\r\n     */\r\n    protected String determineTargetUrl(Authentication authentication) {\r\n        String url = \"\";\r\n\r\n        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();\r\n\r\n        List<String> roles = new ArrayList<String>();\r\n\r\n        for (GrantedAuthority a : authorities) {\r\n            roles.add(a.getAuthority());\r\n        }\r\n\r\n        if (isAdmin(roles)) {\r\n            url = \"/admin\";\r\n        } else if (isDba(roles)) {\r\n            url = \"/dba\";\r\n        } else if (isUser(roles)) {\r\n            url = \"/home\";\r\n        } else {\r\n            url = \"/accessDenied\";\r\n        }\r\n\r\n        return url;\r\n    }\r\n\r\n    private boolean isUser(List<String> roles) {\r\n        if (roles.contains(\"ROLE_USER\")) {\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    private boolean isAdmin(List<String> roles) {\r\n        if (roles.contains(\"ROLE_ADMIN\")) {\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    private boolean isDba(List<String> roles) {\r\n        if (roles.contains(\"ROLE_DBA\")) {\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public void setRedirectStrategy(RedirectStrategy redirectStrategy) {\r\n        this.redirectStrategy = redirectStrategy;\r\n    }\r\n\r\n    protected RedirectStrategy getRedirectStrategy() {\r\n        return redirectStrategy;\r\n    }\r\n\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/configuration/CustomSuccessHandler.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/configuration/CustomSuccessHandler.java	(date 1599621960967)
+@@ -1,4 +1,4 @@
+-package com.codegym.configuration;
++package com.codegym.hotel.booking.configuration;
+ 
+ import org.springframework.security.core.Authentication;
+ import org.springframework.security.core.GrantedAuthority;
+Index: src/main/java/com/codegym/configuration/ApplicationConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.configuration;\r\n\r\n\r\nimport com.codegym.repository.MessageRepository;\r\nimport com.codegym.repository.RoleRepository;\r\nimport com.codegym.repository.UserRepository;\r\nimport com.codegym.repository.impl.MessageRepositoryImpl;\r\nimport com.codegym.repository.impl.RoleRepositryImpl;\r\nimport com.codegym.repository.impl.UserRepositoryImpl;\r\nimport com.codegym.service.MessageService;\r\nimport com.codegym.service.RoleService;\r\nimport com.codegym.service.UserService;\r\nimport com.codegym.service.impl.MessageServiceImpl;\r\nimport com.codegym.service.impl.RoleServiceImpl;\r\nimport com.codegym.service.impl.UserServiceImpl;\r\n\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.beans.BeansException;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\nimport org.springframework.context.ApplicationContext;\r\nimport org.springframework.context.ApplicationContextAware;\r\nimport org.springframework.context.MessageSource;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.ComponentScan;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.context.support.ResourceBundleMessageSource;\r\nimport org.springframework.data.jpa.repository.config.EnableJpaRepositories;\r\nimport org.springframework.data.web.config.EnableSpringDataWebSupport;\r\nimport org.springframework.jdbc.datasource.DriverManagerDataSource;\r\nimport org.springframework.orm.jpa.JpaTransactionManager;\r\nimport org.springframework.orm.jpa.JpaVendorAdapter;\r\nimport org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;\r\nimport org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;\r\nimport org.springframework.transaction.PlatformTransactionManager;\r\nimport org.springframework.transaction.annotation.EnableTransactionManagement;\r\nimport org.springframework.web.servlet.config.annotation.EnableWebMvc;\r\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;\r\nimport org.thymeleaf.TemplateEngine;\r\nimport org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;\r\nimport org.thymeleaf.spring4.SpringTemplateEngine;\r\nimport org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;\r\nimport org.thymeleaf.spring4.view.ThymeleafViewResolver;\r\nimport org.thymeleaf.templatemode.TemplateMode;\r\n\r\nimport javax.persistence.EntityManager;\r\nimport javax.persistence.EntityManagerFactory;\r\nimport javax.sql.DataSource;\r\nimport java.util.Properties;\r\n\r\n@Configuration\r\n@EnableWebMvc\r\n@EnableTransactionManagement\r\n@EnableSpringDataWebSupport\r\n@ComponentScan(\"com.codegym\")\r\n@EnableJpaRepositories(\"com.codegym.repository\")\r\npublic class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {\r\n\r\n    private ApplicationContext applicationContext;\r\n\r\n    Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationConfig.class);\r\n\r\n    @Override\r\n    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {\r\n        this.applicationContext = applicationContext;\r\n    }\r\n\r\n    @Bean\r\n    public UserRepository userRepository() {\r\n        return new UserRepositoryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public UserService userService() {\r\n        return new UserServiceImpl();\r\n    }\r\n\r\n    @Bean\r\n    public RoleRepository roleRepository() {\r\n        return new RoleRepositryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public RoleService roleService() {\r\n        return new RoleServiceImpl();\r\n    }\r\n\r\n    @Bean\r\n    public MessageRepository messageRepository() {\r\n        return new MessageRepositoryImpl();\r\n    }\r\n\r\n    @Bean\r\n    public MessageService messageService() {\r\n        return new MessageServiceImpl();\r\n    }\r\n\r\n    //Thymeleaf Configuration\r\n    @Bean\r\n    public SpringResourceTemplateResolver templateResolver() {\r\n        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();\r\n        templateResolver.setApplicationContext(applicationContext);\r\n        templateResolver.setPrefix(\"/WEB-INF/views/\");\r\n        templateResolver.setSuffix(\".html\");\r\n        templateResolver.setTemplateMode(TemplateMode.HTML);\r\n        templateResolver.setCharacterEncoding(\"UTF-8\");\r\n        return templateResolver;\r\n    }\r\n\r\n    @Bean\r\n    public TemplateEngine templateEngine() {\r\n        TemplateEngine templateEngine = new SpringTemplateEngine();\r\n        templateEngine.setTemplateResolver(templateResolver());\r\n        return templateEngine;\r\n    }\r\n\r\n    @Bean\r\n    public ThymeleafViewResolver viewResolver() {\r\n        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();\r\n        viewResolver.setTemplateEngine(templateEngine());\r\n        viewResolver.setCharacterEncoding(\"UTF-8\");\r\n        return viewResolver;\r\n    }\r\n\r\n    //JPA configuration\r\n    @Bean\r\n    @Qualifier(value = \"entityManager\")\r\n    public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {\r\n        return entityManagerFactory.createEntityManager();\r\n    }\r\n\r\n    @Bean\r\n    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {\r\n        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();\r\n        em.setDataSource(dataSource());\r\n        em.setPackagesToScan(new String[]{\"com.codegym.model\"});\r\n\r\n        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();\r\n        em.setJpaVendorAdapter(vendorAdapter);\r\n        em.setJpaProperties(additionalProperties());\r\n        logger.info(\"call model\");\r\n        return em;\r\n    }\r\n\r\n    @Bean\r\n    public DataSource dataSource() {\r\n        DriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n        dataSource.setDriverClassName(\"com.mysql.cj.jdbc.Driver\");\r\n        dataSource.setUrl(\"jdbc:mysql://localhost:3306/cms?verifyServerCertificate=false&useSSL=false\");\r\n        dataSource.setUsername(\"root\");\r\n        dataSource.setPassword(\"Mc11041992$\");\r\n        return dataSource;\r\n    }\r\n\r\n    @Bean\r\n    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {\r\n        JpaTransactionManager transactionManager = new JpaTransactionManager();\r\n        transactionManager.setEntityManagerFactory(emf);\r\n        return transactionManager;\r\n    }\r\n\r\n    Properties additionalProperties() {\r\n        Properties properties = new Properties();\r\n        properties.setProperty(\"hibernate.hbm2ddl.auto\", \"update\");\r\n        properties.setProperty(\"hibernate.dialect\", \"org.hibernate.dialect.MySQL5Dialect\");\r\n        return properties;\r\n    }\r\n\r\n    @Bean\r\n    public MessageSource messageSource() {\r\n        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();\r\n        messageSource.setBasenames(\"messages\");\r\n        messageSource.setDefaultEncoding(\"UTF-8\");\r\n        return messageSource;\r\n    }\r\n\r\n    @Bean\r\n    public SpringSecurityDialect securityDialect() {\r\n        return new SpringSecurityDialect();\r\n    }\r\n\r\n}
+===================================================================
+--- src/main/java/com/codegym/configuration/ApplicationConfig.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/configuration/ApplicationConfig.java	(date 1599622609005)
+@@ -1,18 +1,18 @@
+-package com.codegym.configuration;
++package com.codegym.hotel.booking.configuration;
+ 
+ 
+-import com.codegym.repository.MessageRepository;
+-import com.codegym.repository.RoleRepository;
+-import com.codegym.repository.UserRepository;
+-import com.codegym.repository.impl.MessageRepositoryImpl;
+-import com.codegym.repository.impl.RoleRepositryImpl;
+-import com.codegym.repository.impl.UserRepositoryImpl;
+-import com.codegym.service.MessageService;
+-import com.codegym.service.RoleService;
+-import com.codegym.service.UserService;
+-import com.codegym.service.impl.MessageServiceImpl;
+-import com.codegym.service.impl.RoleServiceImpl;
+-import com.codegym.service.impl.UserServiceImpl;
++import com.codegym.hotel.booking.repository.MessageRepository;
++import com.codegym.hotel.booking.repository.RoleRepository;
++import com.codegym.hotel.booking.repository.UserRepository;
++import com.codegym.hotel.booking.repository.impl.MessageRepositoryImpl;
++import com.codegym.hotel.booking.repository.impl.RoleRepositoryImpl;
++import com.codegym.hotel.booking.repository.impl.UserRepositoryImpl;
++import com.codegym.hotel.booking.service.MessageService;
++import com.codegym.hotel.booking.service.RoleService;
++import com.codegym.hotel.booking.service.UserService;
++import com.codegym.hotel.booking.service.impl.MessageServiceImpl;
++import com.codegym.hotel.booking.service.impl.RoleServiceImpl;
++import com.codegym.hotel.booking.service.impl.UserServiceImpl;
+ 
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+@@ -53,47 +53,47 @@
+ @EnableTransactionManagement
+ @EnableSpringDataWebSupport
+ @ComponentScan("com.codegym")
+-@EnableJpaRepositories("com.codegym.repository")
++@EnableJpaRepositories("com.codegym.hotel.booking.repository")
+ public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
+ 
+     private ApplicationContext applicationContext;
+ 
+-    Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationConfig.class);
++    Logger logger = LoggerFactory.getLogger(com.codegym.hotel.booking.configuration.ApplicationConfig.class);
+ 
+     @Override
+     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+         this.applicationContext = applicationContext;
+     }
+ 
+-    @Bean
+-    public UserRepository userRepository() {
+-        return new UserRepositoryImpl();
+-    }
+-
+-    @Bean
+-    public UserService userService() {
+-        return new UserServiceImpl();
+-    }
+-
+-    @Bean
+-    public RoleRepository roleRepository() {
+-        return new RoleRepositryImpl();
+-    }
+-
+-    @Bean
+-    public RoleService roleService() {
+-        return new RoleServiceImpl();
+-    }
+-
+-    @Bean
+-    public MessageRepository messageRepository() {
+-        return new MessageRepositoryImpl();
+-    }
+-
+-    @Bean
+-    public MessageService messageService() {
+-        return new MessageServiceImpl();
+-    }
++//    @Bean
++//    public UserRepository userRepository() {
++//        return new UserRepositoryImpl();
++//    }
++//
++//    @Bean
++//    public UserService userService() {
++//        return new UserServiceImpl();
++//    }
++//
++//    @Bean
++//    public RoleRepository roleRepository() {
++//        return new RoleRepositoryImpl();
++//    }
++//
++//    @Bean
++//    public RoleService roleService() {
++//        return new RoleServiceImpl();
++//    }
++//
++//    @Bean
++//    public MessageRepository messageRepository() {
++//        return new MessageRepositoryImpl();
++//    }
++//
++//    @Bean
++//    public MessageService messageService() {
++//        return new MessageServiceImpl();
++//    }
+ 
+     //Thymeleaf Configuration
+     @Bean
+@@ -133,7 +133,7 @@
+     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+         em.setDataSource(dataSource());
+-        em.setPackagesToScan(new String[]{"com.codegym.model"});
++        em.setPackagesToScan(new String[]{"com.codegym.hotel.booking.model"});
+ 
+         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+         em.setJpaVendorAdapter(vendorAdapter);
+Index: src/main/java/com/codegym/configuration/ApplicationInitializer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.configuration;\r\n\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.web.filter.CharacterEncodingFilter;\r\nimport org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;\r\n\r\nimport javax.servlet.Filter;\r\n\r\npublic class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {\r\n\r\n    private static Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationInitializer.class);\r\n\r\n    @Override\r\n    protected Class<?>[] getRootConfigClasses() {\r\n        logger.info(\"call\");\r\n        return new Class[]{ApplicationConfig.class, SecurityWebApplicationInitializer.class};\r\n    }\r\n\r\n    @Override\r\n    protected Class<?>[] getServletConfigClasses() {\r\n        return new Class[]{};\r\n    }\r\n\r\n    @Override\r\n    protected String[] getServletMappings() {\r\n        return new String[]{\"/\"};\r\n    }\r\n\r\n    @Override\r\n    protected Filter[] getServletFilters() {\r\n        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();\r\n        characterEncodingFilter.setEncoding(\"UTF-8\");\r\n        characterEncodingFilter.setForceEncoding(true);\r\n        return new Filter[]{characterEncodingFilter};\r\n    }\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/configuration/ApplicationInitializer.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/configuration/ApplicationInitializer.java	(date 1599622264720)
+@@ -1,4 +1,4 @@
+-package com.codegym.configuration;
++package com.codegym.hotel.booking.configuration;
+ 
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+@@ -9,7 +9,7 @@
+ 
+ public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+ 
+-    private static Logger logger = LoggerFactory.getLogger(com.codegym.ApplicationInitializer.class);
++    private static Logger logger = LoggerFactory.getLogger(com.codegym.hotel.booking.configuration.ApplicationInitializer.class);
+ 
+     @Override
+     protected Class<?>[] getRootConfigClasses() {
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/uiDesigner.xml	(date 1599621961564)
++++ .idea/uiDesigner.xml	(date 1599621961564)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/com/codegym/configuration/SecurityWebApplicationInitializer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.configuration;\r\n\r\nimport org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;\r\n\r\npublic class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/configuration/SecurityWebApplicationInitializer.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/configuration/SecurityWebApplicationInitializer.java	(date 1599621960952)
+@@ -1,4 +1,4 @@
+-package com.codegym.configuration;
++package com.codegym.hotel.booking.configuration;
+ 
+ import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+ 
+Index: src/main/java/com/codegym/hotel/booking/service/impl/UserServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/impl/UserServiceImpl.java	(date 1599622019909)
++++ src/main/java/com/codegym/hotel/booking/service/impl/UserServiceImpl.java	(date 1599622019909)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.service.impl;
++
++import com.codegym.hotel.booking.service.UserService;
++
++public class UserServiceImpl implements UserService {
++}
+Index: src/main/java/com/codegym/hotel/booking/service/impl/RoleServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/impl/RoleServiceImpl.java	(date 1599622187115)
++++ src/main/java/com/codegym/hotel/booking/service/impl/RoleServiceImpl.java	(date 1599622187115)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.service.impl;
++
++import com.codegym.hotel.booking.service.RoleService;
++
++public class RoleServiceImpl implements RoleService {
++}
+Index: src/main/java/com/codegym/model/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.model;\r\n\r\nimport org.springframework.data.annotation.Id;\r\n\r\nimport javax.persistence.*;\r\nimport javax.validation.constraints.NotEmpty;\r\nimport javax.validation.constraints.Size;\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\n@Entity\r\n@Table(name = \"user\")\r\npublic class User {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Integer id;\r\n\r\n    @Column(nullable = false)\r\n    @NotEmpty\r\n    private String first_name;\r\n\r\n    @Column(nullable = false)\r\n    @NotEmpty\r\n    private String last_name;\r\n\r\n    @Column(nullable = false)\r\n    @NotEmpty\r\n    private int gender;\r\n\r\n    @Column(nullable = false)\r\n    @NotEmpty\r\n    private Date date_of_birth;\r\n\r\n    @Column(nullable = false)\r\n    @Size(min = 9, max = 11)\r\n    private String phone;\r\n\r\n    @Column(nullable = false)\r\n    private String address;\r\n\r\n    @Column(nullable = false)\r\n    private String email;\r\n\r\n    @Column(nullable = false)\r\n    @Size(min = 4, max = 32)\r\n    private String username;\r\n\r\n    @Column(nullable = false)\r\n    @Size(min = 6, max = 32)\r\n    private String password;\r\n\r\n    @ManyToMany(cascade = CascadeType.MERGE)\r\n    @JoinTable(\r\n            name = \"user_role\",\r\n            joinColumns = {@JoinColumn(name = \"user_id\", referencedColumnName = \"id\")},\r\n            inverseJoinColumns = {@JoinColumn(name = \"role_id\", referencedColumnName = \"id\")})\r\n    private List<Role> roles;\r\n\r\n    public User() {\r\n    }\r\n\r\n    public User(@NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password) {\r\n        this.first_name = first_name;\r\n        this.last_name = last_name;\r\n        this.gender = gender;\r\n        this.date_of_birth = date_of_birth;\r\n        this.phone = phone;\r\n        this.address = address;\r\n        this.email = email;\r\n        this.username = username;\r\n        this.password = password;\r\n    }\r\n\r\n    public User(Integer id, @NotEmpty String first_name, @NotEmpty String last_name, @NotEmpty int gender, @NotEmpty Date date_of_birth, @Size(min = 9, max = 11) String phone, String address, String email, @Size(min = 4, max = 32) String username, @Size(min = 6, max = 32) String password, List<Role> roles) {\r\n        this.id = id;\r\n        this.first_name = first_name;\r\n        this.last_name = last_name;\r\n        this.gender = gender;\r\n        this.date_of_birth = date_of_birth;\r\n        this.phone = phone;\r\n        this.address = address;\r\n        this.email = email;\r\n        this.username = username;\r\n        this.password = password;\r\n        this.roles = roles;\r\n    }\r\n\r\n    public Integer getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(Integer id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getFirst_name() {\r\n        return first_name;\r\n    }\r\n\r\n    public void setFirst_name(String first_name) {\r\n        this.first_name = first_name;\r\n    }\r\n\r\n    public String getLast_name() {\r\n        return last_name;\r\n    }\r\n\r\n    public void setLast_name(String last_name) {\r\n        this.last_name = last_name;\r\n    }\r\n\r\n    public int getGender() {\r\n        return gender;\r\n    }\r\n\r\n    public void setGender(int gender) {\r\n        this.gender = gender;\r\n    }\r\n\r\n    public Date getDate_of_birth() {\r\n        return date_of_birth;\r\n    }\r\n\r\n    public void setDate_of_birth(Date date_of_birth) {\r\n        this.date_of_birth = date_of_birth;\r\n    }\r\n\r\n    public String getPhone() {\r\n        return phone;\r\n    }\r\n\r\n    public void setPhone(String phone) {\r\n        this.phone = phone;\r\n    }\r\n\r\n    public String getAddress() {\r\n        return address;\r\n    }\r\n\r\n    public void setAddress(String address) {\r\n        this.address = address;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public void setEmail(String email) {\r\n        this.email = email;\r\n    }\r\n\r\n    public String getUsername() {\r\n        return username;\r\n    }\r\n\r\n    public void setUsername(String username) {\r\n        this.username = username;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n\r\n    public List<Role> getRoles() {\r\n        return roles;\r\n    }\r\n\r\n    public void setRoles(List<Role> roles) {\r\n        this.roles = roles;\r\n    }\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/model/User.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/model/User.java	(date 1599622493120)
+@@ -1,6 +1,4 @@
+-package com.codegym.model;
+-
+-import org.springframework.data.annotation.Id;
++package com.codegym.hotel.booking.model;
+ 
+ import javax.persistence.*;
+ import javax.validation.constraints.NotEmpty;
+Index: src/main/java/com/codegym/hotel/booking/service/impl/MessageServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/impl/MessageServiceImpl.java	(date 1599622186830)
++++ src/main/java/com/codegym/hotel/booking/service/impl/MessageServiceImpl.java	(date 1599622186830)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.service.impl;
++
++import com.codegym.hotel.booking.service.MessageService;
++
++public class MessageServiceImpl implements MessageService {
++}
+Index: src/main/java/com/codegym/hotel/booking/service/UserService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/UserService.java	(date 1599622019958)
++++ src/main/java/com/codegym/hotel/booking/service/UserService.java	(date 1599622019958)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.service;
++
++public interface UserService {
++}
+Index: src/main/java/com/codegym/model/Role.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.codegym.model;\r\n\r\nimport javax.persistence.*;\r\nimport javax.validation.constraints.NotEmpty;\r\nimport java.util.List;\r\n\r\n@Entity\r\n@Table(name = \"role\")\r\npublic class Role {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Integer id;\r\n    @Column(nullable = false, unique = true)\r\n    @NotEmpty\r\n    private String name;\r\n\r\n    @ManyToMany(mappedBy = \"roles\")\r\n    private List<User> users;\r\n\r\n    public Integer getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(Integer id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n\r\n    public List<User> getUsers() {\r\n        return users;\r\n    }\r\n\r\n    public void setUsers(List<User> users) {\r\n        this.users = users;\r\n    }\r\n}\r\n
+===================================================================
+--- src/main/java/com/codegym/model/Role.java	(revision 935bd9b0fc1703ef77d3f2839fc9590c378416aa)
++++ src/main/java/com/codegym/hotel/booking/model/Role.java	(date 1599621960714)
+@@ -1,4 +1,4 @@
+-package com.codegym.model;
++package com.codegym.hotel.booking.model;
+ 
+ import javax.persistence.*;
+ import javax.validation.constraints.NotEmpty;
+Index: src/main/java/com/codegym/hotel/booking/repository/UserRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/UserRepository.java	(date 1599622187009)
++++ src/main/java/com/codegym/hotel/booking/repository/UserRepository.java	(date 1599622187009)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.repository;
++
++public interface UserRepository {
++}
+Index: src/main/java/com/codegym/hotel/booking/repository/RoleRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/RoleRepository.java	(date 1599622186870)
++++ src/main/java/com/codegym/hotel/booking/repository/RoleRepository.java	(date 1599622186870)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.repository;
++
++public interface RoleRepository {
++}
+Index: src/main/java/com/codegym/hotel/booking/repository/MessageRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/MessageRepository.java	(date 1599622187267)
++++ src/main/java/com/codegym/hotel/booking/repository/MessageRepository.java	(date 1599622187267)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.repository;
++
++public interface MessageRepository {
++}
+Index: src/main/java/com/codegym/hotel/booking/service/RoleService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/RoleService.java	(date 1599622187058)
++++ src/main/java/com/codegym/hotel/booking/service/RoleService.java	(date 1599622187058)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.service;
++
++public interface RoleService {
++}
+Index: src/main/java/com/codegym/hotel/booking/service/MessageService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/service/MessageService.java	(date 1599622187219)
++++ src/main/java/com/codegym/hotel/booking/service/MessageService.java	(date 1599622187219)
+@@ -0,0 +1,4 @@
++package com.codegym.hotel.booking.service;
++
++public interface MessageService {
++}
+Index: src/main/java/com/codegym/hotel/booking/repository/impl/UserRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/impl/UserRepositoryImpl.java	(date 1599622186920)
++++ src/main/java/com/codegym/hotel/booking/repository/impl/UserRepositoryImpl.java	(date 1599622186920)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.repository.impl;
++
++import com.codegym.hotel.booking.repository.UserRepository;
++
++public class UserRepositoryImpl implements UserRepository {
++}
+Index: src/main/java/com/codegym/hotel/booking/repository/impl/RoleRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/impl/RoleRepositoryImpl.java	(date 1599622187178)
++++ src/main/java/com/codegym/hotel/booking/repository/impl/RoleRepositoryImpl.java	(date 1599622187178)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.repository.impl;
++
++import com.codegym.hotel.booking.repository.RoleRepository;
++
++public class RoleRepositoryImpl implements RoleRepository {
++}
+Index: src/main/java/com/codegym/hotel/booking/repository/impl/MessageRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/codegym/hotel/booking/repository/impl/MessageRepositoryImpl.java	(date 1599622186959)
++++ src/main/java/com/codegym/hotel/booking/repository/impl/MessageRepositoryImpl.java	(date 1599622186959)
+@@ -0,0 +1,6 @@
++package com.codegym.hotel.booking.repository.impl;
++
++import com.codegym.hotel.booking.repository.MessageRepository;
++
++public class MessageRepositoryImpl implements MessageRepository {
++}
