@@ -32,22 +32,21 @@ public class SecurityController {
         return userName;
     }
 
-
     @GetMapping(value = {"/"})
     public String Homepage(Model model, HttpSession session){
         model.addAttribute("user", getPrincipal());
         return "views/index";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/account")
     public String home(){
-        return "views/admin/widgets";
+        return "views/admin/events";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
-        return "views/user/index";
+        return "views/admin/widgets";
     }
 
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
@@ -67,10 +66,10 @@ public class SecurityController {
         return "account/login";
     }
 
-    @RequestMapping("/logout")
-    public String logout(){
-        return "account/lock";
-    }
+//    @RequestMapping("/logout")
+//    public String logout(){
+//        return "account/lock";
+//    }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView register(ModelMap model) {

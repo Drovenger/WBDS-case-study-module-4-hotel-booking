@@ -7,4 +7,8 @@ git checkout nhanh ca nhan
 if error: git add .
           dit stash -d -fx
 git checkout nhanh ca nhan
-git merge
+git merge dev
+git add .; git commit; git push origin dev
+git checkout dev
+git merge hieu
+git add; git commit; git push origin dev 

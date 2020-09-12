@@ -12,12 +12,6 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    @NotEmpty
-    @ManyToOne
-    @JoinColumn(name = "manager_id")
-    private Manager manager;
-
     @Column(nullable = false)
     @NotEmpty
     @Size(min = 8, max = 64)
@@ -33,25 +27,22 @@ public class Hotel {
 
     private String img;
 
-    public Hotel(Integer id, @NotEmpty Manager manager, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status, String img) {
+    public Hotel(Integer id, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status, String img) {
         this.id = id;
-        this.manager = manager;
         this.name = name;
         this.description = description;
         this.status = status;
         this.img = img;
     }
 
-    public Hotel(Integer id, @NotEmpty Manager manager, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status) {
+    public Hotel(Integer id, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status) {
         this.id = id;
-        this.manager = manager;
         this.name = name;
         this.description = description;
         this.status = status;
     }
 
-    public Hotel(@NotEmpty Manager manager, @NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status) {
-        this.manager = manager;
+    public Hotel(@NotEmpty @Size(min = 8, max = 64) String name, @NotEmpty String description, @NotEmpty Integer status) {
         this.name = name;
         this.description = description;
         this.status = status;
@@ -66,14 +57,6 @@ public class Hotel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Manager getManager() {
-        return manager;
-    }
-
-    public void setManager(Manager manager) {
-        this.manager = manager;
     }
 
     public String getName() {

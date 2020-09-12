@@ -31,13 +31,6 @@ public class Bill {
     @NotEmpty
     private Integer status;
 
-//    @ManyToMany(cascade = CascadeType.MERGE)
-//    @JoinTable(
-//            name = "bill_details",
-//            joinColumns = {@JoinColumn(name = "id", referencedColumnName = "bill_id")},
-//            inverseJoinColumns = {@JoinColumn(name = "price", referencedColumnName = "id")})
-//    private List<BillDetails> billDetails;
-
     public Bill(Integer id, @NotEmpty User user, String message, String discount, @NotEmpty String payment, @NotEmpty Date dateOfPayment, @NotEmpty Integer status) {
         this.id = id;
         this.user = user;

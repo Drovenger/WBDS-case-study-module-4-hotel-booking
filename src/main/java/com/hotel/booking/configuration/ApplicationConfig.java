@@ -4,8 +4,6 @@ import com.hotel.booking.service.admin.RoleService;
 import com.hotel.booking.service.admin.RoleServiceImpl;
 import com.hotel.booking.service.manager.HotelService;
 import com.hotel.booking.service.manager.HotelServiceImpl;
-import com.hotel.booking.service.manager.ManagerService;
-import com.hotel.booking.service.manager.ManagerServiceImpl;
 import com.hotel.booking.service.user.MessageService;
 import com.hotel.booking.service.user.MessageServiceImpl;
 import com.hotel.booking.service.user.UserService;
@@ -96,11 +94,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     @Bean
     public MessageService messageService() {
         return new MessageServiceImpl();
-    }
-
-    @Bean
-    public ManagerService managerService() {
-        return new ManagerServiceImpl();
     }
 
     @Bean

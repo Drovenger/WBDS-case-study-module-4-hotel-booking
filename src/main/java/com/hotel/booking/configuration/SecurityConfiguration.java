@@ -58,10 +58,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 
-        // Cấu hình Remember Me.
-        http.authorizeRequests().and() //
-                .rememberMe().tokenRepository(this.persistentTokenRepository()) //
-                .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
+//        // Cấu hình Remember Me.
+//        http.authorizeRequests().and() //
+//                .rememberMe().tokenRepository(this.persistentTokenRepository()) //
+//                .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
     }
 
     PersistentTokenRepository persistentTokenRepository(){
