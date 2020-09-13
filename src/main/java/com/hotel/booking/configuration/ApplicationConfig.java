@@ -51,10 +51,7 @@ import java.util.Properties;
 @EnableSpringDataWebSupport
 @ComponentScan("com.hotel.booking")
 @EnableJpaRepositories("com.hotel.booking.repository")
-@PropertySources({
-        @PropertySource(value = "classpath:file.properties"),
-        @PropertySource(value = "classpath:application.properties")
-})
+@PropertySource(value = "classpath:application.properties")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -95,7 +92,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public MessageService messageService() {
         return new MessageServiceImpl();
     }
-
     @Bean
     public HotelService hotelService() {return new HotelServiceImpl();}
 

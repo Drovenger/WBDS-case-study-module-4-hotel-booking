@@ -25,6 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4bf866b-1237-4cbd-8feb-2bf62b1e8f9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/admin/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,42 +35,45 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b5a96030-b584-496c-b9f4-84c602cf5268.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/ApplicationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/CustomSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/configuration/CustomSuccessHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/manager/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/manager/ManagerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/controller/security/SecurityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/Bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/Bill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/Manager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/repository/ManagerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/HotelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/HotelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/HotelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/HotelServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/ManagerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hotel/booking/service/manager/ManagerServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/WBDS-case-study-module-4-hotel-booking-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/file.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/CustomSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/CustomSuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/manager/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/manager/ManagerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/controller/security/SecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/repository/ManagerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/HotelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/HotelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/HotelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/HotelServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/ManagerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/manager/ManagerServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/booking/service/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/file.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-professor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-professor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/add-student.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/advance-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/advance-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-professors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-professors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/all-students.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/basic-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/basic-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/data-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/data-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/departments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/departments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dual-list-box.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dual-list-box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-professor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-professor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-student.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/google-map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/google-map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/images-cropper.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/images-cropper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/library-assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/library-assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/multi-upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/multi-upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/professor-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/professor-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/static-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/static-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/student-profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/widgets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/management/all-hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/management/all-hotels.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +90,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -108,20 +115,21 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources\static" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\error" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\static" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.hotel.booking.configuration" />
@@ -129,12 +137,12 @@
       <recent name="com.hotel.booking.service.admin" />
       <recent name="com.hotel.booking.exception" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views\admin" />
-      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\error" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\account" />
+      <recent name="C:\Users\Piuta\Documents\Codegym\WBDS-case-study-module-4-hotel-booking\src\main\webapp\WEB-INF\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,6 +227,7 @@
       <workItem from="1599786803000" duration="954000" />
       <workItem from="1599789588444" duration="5217000" />
       <workItem from="1599806074932" duration="3628000" />
+      <workItem from="1599971387698" duration="10143000" />
     </task>
     <servers />
   </component>
@@ -258,74 +267,74 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599799997799" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599816923976">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599973701174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599816923976" />
-    <state width="1493" height="181" key="GridCell.Tab.0.bottom" timestamp="1599937627802">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599973701174" />
+    <state width="1493" height="251" key="GridCell.Tab.0.bottom" timestamp="1599982666066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.0.center" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599982666066" />
+    <state width="1493" height="251" key="GridCell.Tab.0.center" timestamp="1599982666065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.0.left" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599982666065" />
+    <state width="1493" height="251" key="GridCell.Tab.0.left" timestamp="1599982666065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.0.right" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599982666065" />
+    <state width="1493" height="251" key="GridCell.Tab.0.right" timestamp="1599982666065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.1.bottom" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599982666065" />
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom" timestamp="1599982666067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.1.center" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599982666067" />
+    <state width="1493" height="251" key="GridCell.Tab.1.center" timestamp="1599982666066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.1.left" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599982666066" />
+    <state width="1493" height="251" key="GridCell.Tab.1.left" timestamp="1599982666066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.1.right" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599982666066" />
+    <state width="1493" height="251" key="GridCell.Tab.1.right" timestamp="1599982666066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.2.bottom" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599982666066" />
+    <state width="1493" height="251" key="GridCell.Tab.2.bottom" timestamp="1599982666068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.2.center" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599982666068" />
+    <state width="1493" height="251" key="GridCell.Tab.2.center" timestamp="1599982666067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.2.left" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599982666067" />
+    <state width="1493" height="251" key="GridCell.Tab.2.left" timestamp="1599982666067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="181" key="GridCell.Tab.2.right" timestamp="1599937627802">
+    <state width="1493" height="251" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599982666067" />
+    <state width="1493" height="251" key="GridCell.Tab.2.right" timestamp="1599982666067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="181" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599937627802" />
-    <state width="1493" height="191" key="GridCell.Tab.3.bottom" timestamp="1599937109493">
+    <state width="1493" height="251" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599982666067" />
+    <state width="1493" height="191" key="GridCell.Tab.3.bottom" timestamp="1599954014835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="191" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599937109493" />
-    <state width="1493" height="191" key="GridCell.Tab.3.center" timestamp="1599937109493">
+    <state width="1493" height="191" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599954014835" />
+    <state width="1493" height="191" key="GridCell.Tab.3.center" timestamp="1599954014835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="191" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1599937109493" />
-    <state width="1493" height="191" key="GridCell.Tab.3.left" timestamp="1599937109493">
+    <state width="1493" height="191" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1599954014835" />
+    <state width="1493" height="191" key="GridCell.Tab.3.left" timestamp="1599954014835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="191" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1599937109493" />
-    <state width="1493" height="191" key="GridCell.Tab.3.right" timestamp="1599937109493">
+    <state width="1493" height="191" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1599954014835" />
+    <state width="1493" height="191" key="GridCell.Tab.3.right" timestamp="1599954014835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="191" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1599937109493" />
+    <state width="1493" height="191" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1599954014835" />
     <state x="147" y="65" key="MergeDialog" timestamp="1599812338368">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -382,16 +391,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="287" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1599638635334" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/booking/configuration/CustomSuccessHandler.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
