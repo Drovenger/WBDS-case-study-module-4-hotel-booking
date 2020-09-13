@@ -2,6 +2,7 @@ package com.hotel.booking.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +31,10 @@ public class Bill {
 
     @NotEmpty
     private Integer status;
+
+    @OneToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     public Bill(Integer id, @NotEmpty User user, String message, String discount, @NotEmpty String payment, @NotEmpty Date dateOfPayment, @NotEmpty Integer status) {
         this.id = id;
